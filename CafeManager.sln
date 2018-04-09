@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManager", "CafeManager\CafeManager.csproj", "{178DA097-DC4F-4DDE-98FC-0532447089FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{178DA097-DC4F-4DDE-98FC-0532447089FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178DA097-DC4F-4DDE-98FC-0532447089FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178DA097-DC4F-4DDE-98FC-0532447089FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178DA097-DC4F-4DDE-98FC-0532447089FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A2FD6A-6241-4304-B070-D8CB5B50E518}
+	EndGlobalSection
+EndGlobal
