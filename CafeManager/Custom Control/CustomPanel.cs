@@ -51,7 +51,7 @@ namespace CafeManager.Custom_Control
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗi sủ lý FormEclipse");
+                MessageBox.Show("Lỗi sử lý FormEclipse");
             }
         }
 
