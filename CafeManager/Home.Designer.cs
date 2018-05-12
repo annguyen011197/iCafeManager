@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableControl5 = new CafeManager.TableControl();
+            this.tableControl4 = new CafeManager.TableControl();
+            this.tableControl3 = new CafeManager.TableControl();
+            this.tableControl2 = new CafeManager.TableControl();
+            this.tableControl1 = new CafeManager.TableControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,14 +63,9 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.header1 = new CafeManager.Header();
             this.formEclipse1 = new CafeManager.FormEclipse(this.components);
-            this.tableControl1 = new CafeManager.TableControl();
-            this.tableControl2 = new CafeManager.TableControl();
-            this.tableControl3 = new CafeManager.TableControl();
-            this.tableControl4 = new CafeManager.TableControl();
-            this.tableControl5 = new CafeManager.TableControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,13 +88,52 @@
             this.panel1.Controls.Add(this.tableControl1);
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 599);
+            this.panel1.Size = new System.Drawing.Size(543, 599);
             this.panel1.TabIndex = 2;
+            // 
+            // tableControl5
+            // 
+            this.tableControl5.BackColor = System.Drawing.Color.White;
+            this.tableControl5.Location = new System.Drawing.Point(427, 35);
+            this.tableControl5.Name = "tableControl5";
+            this.tableControl5.Size = new System.Drawing.Size(100, 100);
+            this.tableControl5.TabIndex = 4;
+            // 
+            // tableControl4
+            // 
+            this.tableControl4.BackColor = System.Drawing.Color.White;
+            this.tableControl4.Location = new System.Drawing.Point(321, 39);
+            this.tableControl4.Name = "tableControl4";
+            this.tableControl4.Size = new System.Drawing.Size(100, 100);
+            this.tableControl4.TabIndex = 3;
+            // 
+            // tableControl3
+            // 
+            this.tableControl3.BackColor = System.Drawing.Color.White;
+            this.tableControl3.Location = new System.Drawing.Point(215, 39);
+            this.tableControl3.Name = "tableControl3";
+            this.tableControl3.Size = new System.Drawing.Size(100, 100);
+            this.tableControl3.TabIndex = 2;
+            // 
+            // tableControl2
+            // 
+            this.tableControl2.BackColor = System.Drawing.Color.White;
+            this.tableControl2.Location = new System.Drawing.Point(109, 39);
+            this.tableControl2.Name = "tableControl2";
+            this.tableControl2.Size = new System.Drawing.Size(100, 100);
+            this.tableControl2.TabIndex = 1;
+            // 
+            // tableControl1
+            // 
+            this.tableControl1.BackColor = System.Drawing.Color.White;
+            this.tableControl1.Location = new System.Drawing.Point(3, 39);
+            this.tableControl1.Name = "tableControl1";
+            this.tableControl1.Size = new System.Drawing.Size(100, 100);
+            this.tableControl1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
@@ -118,7 +158,7 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(531, 41);
+            this.panel2.Location = new System.Drawing.Point(533, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(351, 599);
             this.panel2.TabIndex = 3;
@@ -314,44 +354,52 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(101)))), ((int)(((byte)(178)))));
             this.panel3.Controls.Add(this.listView3);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(879, 41);
+            this.panel3.Location = new System.Drawing.Point(864, 46);
+            this.panel3.Margin = new System.Windows.Forms.Padding(10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 599);
+            this.panel3.Size = new System.Drawing.Size(246, 582);
             this.panel3.TabIndex = 4;
             // 
             // listView3
             // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView3.Location = new System.Drawing.Point(9, 174);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(223, 413);
+            this.listView3.Size = new System.Drawing.Size(223, 396);
             this.listView3.TabIndex = 1;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.listView2);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(1, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(243, 168);
+            this.panel4.Size = new System.Drawing.Size(246, 168);
             this.panel4.TabIndex = 0;
             // 
             // listView2
             // 
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView2.Location = new System.Drawing.Point(9, 39);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(223, 117);
+            this.listView2.Size = new System.Drawing.Size(226, 117);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(42, 8);
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.Location = new System.Drawing.Point(45, 8);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(189, 20);
             this.textBox7.TabIndex = 1;
@@ -366,10 +414,28 @@
             this.label9.Size = new System.Drawing.Size(30, 15);
             this.label9.TabIndex = 0;
             this.label9.Text = "Tìm";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.Gray;
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Location = new System.Drawing.Point(1072, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(39, 41);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExitLeave);
+            this.btnExit.MouseHover += new System.EventHandler(this.btnExitHover);
             // 
             // header1
             // 
-            this.header1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.header1.BackColor = System.Drawing.Color.Transparent;
             this.header1.Dock = System.Windows.Forms.DockStyle.Top;
             this.header1.Location = new System.Drawing.Point(0, 0);
             this.header1.Name = "header1";
@@ -382,67 +448,13 @@
             this.formEclipse1.ElipseRadius = 10;
             this.formEclipse1.TargetControl = this;
             // 
-            // tableControl1
-            // 
-            this.tableControl1.BackColor = System.Drawing.Color.White;
-            this.tableControl1.Location = new System.Drawing.Point(3, 39);
-            this.tableControl1.Name = "tableControl1";
-            this.tableControl1.Size = new System.Drawing.Size(100, 100);
-            this.tableControl1.TabIndex = 0;
-            // 
-            // tableControl2
-            // 
-            this.tableControl2.BackColor = System.Drawing.Color.White;
-            this.tableControl2.Location = new System.Drawing.Point(109, 39);
-            this.tableControl2.Name = "tableControl2";
-            this.tableControl2.Size = new System.Drawing.Size(100, 100);
-            this.tableControl2.TabIndex = 1;
-            // 
-            // tableControl3
-            // 
-            this.tableControl3.BackColor = System.Drawing.Color.White;
-            this.tableControl3.Location = new System.Drawing.Point(215, 39);
-            this.tableControl3.Name = "tableControl3";
-            this.tableControl3.Size = new System.Drawing.Size(100, 100);
-            this.tableControl3.TabIndex = 2;
-            // 
-            // tableControl4
-            // 
-            this.tableControl4.BackColor = System.Drawing.Color.White;
-            this.tableControl4.Location = new System.Drawing.Point(321, 39);
-            this.tableControl4.Name = "tableControl4";
-            this.tableControl4.Size = new System.Drawing.Size(100, 100);
-            this.tableControl4.TabIndex = 3;
-            // 
-            // tableControl5
-            // 
-            this.tableControl5.BackColor = System.Drawing.Color.White;
-            this.tableControl5.Location = new System.Drawing.Point(427, 35);
-            this.tableControl5.Name = "tableControl5";
-            this.tableControl5.Size = new System.Drawing.Size(100, 100);
-            this.tableControl5.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.button1.BackgroundImage = global::CafeManager.Properties.Resources.remove_symbol;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1083, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 41);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1122, 640);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -502,6 +514,6 @@
         private TableControl tableControl3;
         private TableControl tableControl2;
         private TableControl tableControl1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -75,11 +75,20 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeV2.Designer.cs">
+      <DependentUpon>HomeV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NonFlickerSplitContainer.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeV2.resx">
+      <DependentUpon>HomeV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -141,6 +153,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\exit-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\find.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

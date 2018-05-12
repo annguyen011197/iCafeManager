@@ -21,5 +21,20 @@ namespace CafeManager
         {
             Application.Exit();
         }
+
+        private void btnExitHover(object sender, EventArgs e)
+        {
+            this.btnExit.BackColor = Color.Red;
+        }
+
+        private void btnExitLeave(object sender, EventArgs e)
+        {
+            this.btnExit.BackColor = Color.Gray;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
