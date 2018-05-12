@@ -37,7 +37,8 @@ namespace CafeManager
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new HomeV2().Show();
+            //new HomeV2().Show();
+            new Manager().Show();
         }
     }
 }

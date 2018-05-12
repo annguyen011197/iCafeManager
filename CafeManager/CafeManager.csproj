@@ -46,10 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custom Control\Elipse.cs" />
+    <Compile Include="Custom Control\ExitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Control\ExitButton.Designer.cs">
+      <DependentUpon>ExitButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Control\FormEclipse.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -87,6 +99,24 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm\AddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm\AddNew.Designer.cs">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm\Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm\Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="NonFlickerSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -98,8 +128,14 @@
     <Compile Include="TableControl.Designer.cs">
       <DependentUpon>TableControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component1.resx">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Custom Control\CustomPanel.resx">
       <DependentUpon>CustomPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Control\ExitButton.resx">
+      <DependentUpon>ExitButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Custom Control\Header.resx">
       <DependentUpon>Header.cs</DependentUpon>
@@ -115,6 +151,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\AddNew.resx">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +210,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-employee-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-customer-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-coffee-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-box-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
