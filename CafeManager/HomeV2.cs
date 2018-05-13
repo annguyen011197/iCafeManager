@@ -78,10 +78,5 @@ namespace CafeManager
             button6.ForeColor = Color.Black;
             flowLayoutPanel1.BringToFront();
         }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

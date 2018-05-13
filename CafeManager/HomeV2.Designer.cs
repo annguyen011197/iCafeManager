@@ -30,6 +30,13 @@
         {
             this.btnExit = new System.Windows.Forms.Button();
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableControl1 = new CafeManager.TableControl();
+            this.tableControl2 = new CafeManager.TableControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.nonFlickerSplitContainer2 = new CafeManager.NonFlickerSplitContainer();
             this.listView3 = new System.Windows.Forms.ListView();
             this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
@@ -57,17 +64,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.header1 = new CafeManager.Header();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.tableControl1 = new CafeManager.TableControl();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableControl2 = new CafeManager.TableControl();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).BeginInit();
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
             this.nonFlickerSplitContainer1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer2)).BeginInit();
             this.nonFlickerSplitContainer2.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer2.Panel2.SuspendLayout();
@@ -77,14 +79,12 @@
             this.nonFlickerSplitContainer3.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer3.Panel2.SuspendLayout();
             this.nonFlickerSplitContainer3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(171)))), ((int)(((byte)(169)))));
             this.btnExit.BackgroundImage = global::CafeManager.Properties.Resources.exit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExit.FlatAppearance.BorderSize = 0;
@@ -124,6 +124,88 @@
             this.nonFlickerSplitContainer1.Size = new System.Drawing.Size(939, 486);
             this.nonFlickerSplitContainer1.SplitterDistance = 313;
             this.nonFlickerSplitContainer1.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Controls.Add(this.tableControl1);
+            this.flowLayoutPanel1.Controls.Add(this.tableControl2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 456);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // tableControl1
+            // 
+            this.tableControl1.BackColor = System.Drawing.Color.Maroon;
+            this.tableControl1.Location = new System.Drawing.Point(3, 3);
+            this.tableControl1.Name = "tableControl1";
+            this.tableControl1.Size = new System.Drawing.Size(100, 100);
+            this.tableControl1.TabIndex = 0;
+            // 
+            // tableControl2
+            // 
+            this.tableControl2.BackColor = System.Drawing.Color.DarkRed;
+            this.tableControl2.Location = new System.Drawing.Point(109, 3);
+            this.tableControl2.Name = "tableControl2";
+            this.tableControl2.Size = new System.Drawing.Size(100, 100);
+            this.tableControl2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 30);
+            this.panel1.TabIndex = 0;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button7.Location = new System.Drawing.Point(75, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 30);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Khu B";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 30);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Khu A";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(313, 486);
+            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // nonFlickerSplitContainer2
             // 
@@ -498,95 +580,12 @@
             // 
             this.header1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.header1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.header1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(171)))), ((int)(((byte)(169)))));
             this.header1.Location = new System.Drawing.Point(0, -1);
             this.header1.Name = "header1";
             this.header1.Size = new System.Drawing.Size(964, 35);
             this.header1.TabIndex = 0;
             this.header1.TargetControl = null;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 30);
-            this.panel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.tableControl1);
-            this.flowLayoutPanel1.Controls.Add(this.tableControl2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 456);
-            this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 30);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Khu A";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.Location = new System.Drawing.Point(75, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 30);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Khu B";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // tableControl1
-            // 
-            this.tableControl1.BackColor = System.Drawing.Color.Maroon;
-            this.tableControl1.Location = new System.Drawing.Point(3, 3);
-            this.tableControl1.Name = "tableControl1";
-            this.tableControl1.Size = new System.Drawing.Size(100, 100);
-            this.tableControl1.TabIndex = 0;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(313, 486);
-            this.flowLayoutPanel2.TabIndex = 2;
-            // 
-            // tableControl2
-            // 
-            this.tableControl2.BackColor = System.Drawing.Color.DarkRed;
-            this.tableControl2.Location = new System.Drawing.Point(109, 3);
-            this.tableControl2.Name = "tableControl2";
-            this.tableControl2.Size = new System.Drawing.Size(100, 100);
-            this.tableControl2.TabIndex = 1;
             // 
             // HomeV2
             // 
@@ -605,6 +604,8 @@
             this.nonFlickerSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).EndInit();
             this.nonFlickerSplitContainer1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.PerformLayout();
             this.nonFlickerSplitContainer2.Panel2.ResumeLayout(false);
@@ -617,8 +618,6 @@
             this.nonFlickerSplitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer3)).EndInit();
             this.nonFlickerSplitContainer3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
