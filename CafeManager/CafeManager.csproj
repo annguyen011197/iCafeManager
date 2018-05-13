@@ -52,6 +52,8 @@
     <Compile Include="Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\DataProvider.cs" />
     <Compile Include="Custom Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,17 +119,22 @@
     <Compile Include="ManagerForm\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Account.cs" />
     <Compile Include="NonFlickerSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\BaseService.cs" />
     <Compile Include="TableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TableControl.Designer.cs">
       <DependentUpon>TableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\HelperUtils.cs" />
+    <Compile Include="Utils\MD5.cs" />
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
