@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CafeManager.Controller;
+using CafeManager.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +9,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CafeManager.TableControl;
 
 namespace CafeManager
 {
     public partial class HomeV2 : Form
     {
+        private List<TableControl> listTable = new List<TableControl>();
+
         public HomeV2()
         {
             InitializeComponent();
             button6.Enabled = false;
             button6.BackColor = Color.White;
             button6.ForeColor = Color.Black;
+
+            updateTable();
         }
+
+        public void onClickTableEvent(TableControl tb)
+        {
+            lbNameTable.Text = tb.Table.Name;
+            unCheckTable();
+            tb.check();
+        }
+        
+
+        void unCheckTable()
+        {
+            listTable.ForEach(item =>
+            {
+                item.unCheck();
+            });
+        }
+
+        private void updateTable()
+        {
+            List<Table> list = TableController.getController().getListTable();
+            if (list != null)
+            {
+                list.ForEach(item =>
+                {
+                    TableControl tb = new TableControl();
+                    tb.Table = item;
+                    tb.Parent = flowLayoutPanel1;
+                    flowLayoutPanel1.Controls.Add(tb);
+                    tb.onClick = new onClickTable(onClickTableEvent);
+                    listTable.Add(tb);
+                });
+            }
+        }
+
 
         private void btnExitClick(object sender, EventArgs e)
         {

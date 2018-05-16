@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,9 @@ namespace CafeManager.Service
     {
         T findOne(ID id);
 
-        List<T> findAll();
+        DataTable findAll();
 
-        List<T> findAll(List<ID> listId);
+        DataTable findAll(List<ID> listId);
 
         long count();
 

@@ -46,7 +46,7 @@ namespace CafeManager
             if(AccountController.getController().checkAccount(userName, passWord))
             {
                 this.Hide();
-                new Manager().Show();
+                new HomeV2().Show();
             }
             else
             {

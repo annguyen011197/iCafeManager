@@ -31,8 +31,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableControl1 = new CafeManager.TableControl();
-            this.tableControl2 = new CafeManager.TableControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -54,7 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNameTable = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -68,7 +66,6 @@
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
             this.nonFlickerSplitContainer1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer2)).BeginInit();
             this.nonFlickerSplitContainer2.Panel1.SuspendLayout();
@@ -128,29 +125,11 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.tableControl1);
-            this.flowLayoutPanel1.Controls.Add(this.tableControl2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 456);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // tableControl1
-            // 
-            this.tableControl1.BackColor = System.Drawing.Color.Maroon;
-            this.tableControl1.Location = new System.Drawing.Point(3, 3);
-            this.tableControl1.Name = "tableControl1";
-            this.tableControl1.Size = new System.Drawing.Size(100, 100);
-            this.tableControl1.TabIndex = 0;
-            // 
-            // tableControl2
-            // 
-            this.tableControl2.BackColor = System.Drawing.Color.DarkRed;
-            this.tableControl2.Location = new System.Drawing.Point(109, 3);
-            this.tableControl2.Name = "tableControl2";
-            this.tableControl2.Size = new System.Drawing.Size(100, 100);
-            this.tableControl2.TabIndex = 1;
             // 
             // panel1
             // 
@@ -225,7 +204,7 @@
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label4);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.textBox2);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label3);
-            this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label2);
+            this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.lbNameTable);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button3);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button2);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button1);
@@ -449,17 +428,17 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Khách hàng";
             // 
-            // label2
+            // lbNameTable
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(267, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Bàn 21";
+            this.lbNameTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNameTable.AutoSize = true;
+            this.lbNameTable.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameTable.ForeColor = System.Drawing.Color.Black;
+            this.lbNameTable.Location = new System.Drawing.Point(267, 7);
+            this.lbNameTable.Name = "lbNameTable";
+            this.lbNameTable.Size = new System.Drawing.Size(69, 22);
+            this.lbNameTable.TabIndex = 3;
+            this.lbNameTable.Text = "Bàn 21";
             // 
             // button3
             // 
@@ -604,7 +583,6 @@
             this.nonFlickerSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).EndInit();
             this.nonFlickerSplitContainer1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.PerformLayout();
@@ -636,7 +614,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNameTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox3;
@@ -657,8 +635,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private TableControl tableControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private TableControl tableControl2;
     }
 }
