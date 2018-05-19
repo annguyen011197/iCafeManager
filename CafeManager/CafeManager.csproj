@@ -117,7 +117,7 @@
     <Compile Include="ManagerForm\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="NonFlickerSplitContainer.cs">
+    <Compile Include="Custom Control\NonFlickerSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
