@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CafeManager.Controller;
+using CafeManager.Model;
+using CafeManager.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace CafeManager.ManagerForm
 {
     public partial class AddNew : Form
     {
+
         public AddNew()
         {
             InitializeComponent();
@@ -26,5 +30,30 @@ namespace CafeManager.ManagerForm
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Tài khoản và mật khẩu không được bỏ trống!");
+            }
+            Account account = new Account();
+            account.Display_Name = textBox3.Text;
+            account.Username = textBox1.Text; // Thêm kiểm tra tên
+            account.Password = textBox2.Text.makeMD5(); // Thêm kiểm tra mật khẩu
+            account.Type = 0;
+            bool done = AccountController.getController().createAccount(account);
+            if (done)
+            {
+                MessageBox.Show("Tạo thành công tài khoản: " + account.Username);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tên tài khoản đã tồn tại!");
+            }
+        }
+
+       
     }
 }

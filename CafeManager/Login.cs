@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CafeManager.Controller;
+using CafeManager.Model;
+using CafeManager.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +23,6 @@ namespace CafeManager
         public Login()
         {
             InitializeComponent();
-            //Elipse.Apply(panel2, 20);
-            //Elipse.Apply(this, 20);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,9 +37,37 @@ namespace CafeManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //new HomeV2().Show();
-            new Manager().Show();
+            string userName = textBox1.Text;
+            string passWord = textBox2.Text.makeMD5();
+            if (userName == "" || passWord == "")
+            {
+                MessageBox.Show("Tài khoản và mật khẩu không được bỏ trống");
+            }
+            Account account = AccountController.getController().checkAccount(userName, passWord);
+            if (account != null)
+            {
+                if(account.Type == 2)
+                {
+                    this.Hide();
+                    new Manager().Show();
+                }
+                else
+                {
+                    this.Hide();
+                    new HomeV2().Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản nhập sai");
+            }
+
+           
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

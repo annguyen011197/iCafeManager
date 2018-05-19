@@ -52,6 +52,11 @@
     <Compile Include="Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\CategoryController.cs" />
+    <Compile Include="Controller\FoodController.cs" />
+    <Compile Include="Controller\TableController.cs" />
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\DataProvider.cs" />
     <Compile Include="Custom Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -74,6 +79,9 @@
     </Compile>
     <Compile Include="Custom Control\Header.Designer.cs">
       <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Control\NonFlickerSplitContainer.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custom Control\TextboxCustom.cs">
       <SubType>UserControl</SubType>
@@ -111,23 +119,52 @@
     <Compile Include="ManagerForm\AddNew.Designer.cs">
       <DependentUpon>AddNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerForm\InputNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm\InputNumber.Designer.cs">
+      <DependentUpon>InputNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForm\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerForm\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Custom Control\NonFlickerSplitContainer.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Account_Info.cs" />
+    <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\Bill_Info.cs" />
+    <Compile Include="Model\Bill_Voucher.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Customer_Voucher.cs" />
+    <Compile Include="Model\Food.cs" />
+    <Compile Include="Model\Table.cs" />
+    <Compile Include="Model\Voucher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableControl.cs">
+    <Compile Include="Service\CategoryService.cs" />
+    <Compile Include="Service\FoodService.cs" />
+    <Compile Include="Service\VoucherService.cs" />
+    <Compile Include="Service\TableService.cs" />
+    <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\BaseService.cs" />
+    <Compile Include="UserControl\AccountControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TableControl.Designer.cs">
+    <Compile Include="UserControl\AccountControl.Designer.cs">
+      <DependentUpon>AccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TableControl.Designer.cs">
       <DependentUpon>TableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ColorUtils.cs" />
+    <Compile Include="Utils\HelperUtils.cs" />
+    <Compile Include="Utils\MD5.cs" />
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +195,9 @@
     <EmbeddedResource Include="ManagerForm\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\InputNumber.resx">
+      <DependentUpon>InputNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +211,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TableControl.resx">
+    <EmbeddedResource Include="UserControl\AccountControl.resx">
+      <DependentUpon>AccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TableControl.resx">
       <DependentUpon>TableControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -31,8 +31,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableControl1 = new CafeManager.TableControl();
-            this.tableControl2 = new CafeManager.TableControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -54,13 +52,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNameTable = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.nonFlickerSplitContainer3 = new CafeManager.NonFlickerSplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.header1 = new CafeManager.Header();
@@ -68,7 +66,6 @@
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
             this.nonFlickerSplitContainer1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer2)).BeginInit();
             this.nonFlickerSplitContainer2.Panel1.SuspendLayout();
@@ -128,29 +125,12 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.tableControl1);
-            this.flowLayoutPanel1.Controls.Add(this.tableControl2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 456);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // tableControl1
-            // 
-            this.tableControl1.BackColor = System.Drawing.Color.Maroon;
-            this.tableControl1.Location = new System.Drawing.Point(3, 3);
-            this.tableControl1.Name = "tableControl1";
-            this.tableControl1.Size = new System.Drawing.Size(100, 100);
-            this.tableControl1.TabIndex = 0;
-            // 
-            // tableControl2
-            // 
-            this.tableControl2.BackColor = System.Drawing.Color.DarkRed;
-            this.tableControl2.Location = new System.Drawing.Point(109, 3);
-            this.tableControl2.Name = "tableControl2";
-            this.tableControl2.Size = new System.Drawing.Size(100, 100);
-            this.tableControl2.TabIndex = 1;
+            this.flowLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseClick);
             // 
             // panel1
             // 
@@ -225,7 +205,7 @@
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label4);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.textBox2);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label3);
-            this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.label2);
+            this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.lbNameTable);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button3);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button2);
             this.nonFlickerSplitContainer2.Panel1.Controls.Add(this.button1);
@@ -243,6 +223,7 @@
             this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
             this.listView3.Location = new System.Drawing.Point(0, 156);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(344, 177);
@@ -449,17 +430,17 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Khách hàng";
             // 
-            // label2
+            // lbNameTable
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(267, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Bàn 21";
+            this.lbNameTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNameTable.AutoSize = true;
+            this.lbNameTable.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameTable.ForeColor = System.Drawing.Color.Black;
+            this.lbNameTable.Location = new System.Drawing.Point(267, 7);
+            this.lbNameTable.Name = "lbNameTable";
+            this.lbNameTable.Size = new System.Drawing.Size(69, 22);
+            this.lbNameTable.TabIndex = 3;
+            this.lbNameTable.Text = "Bàn 21";
             // 
             // button3
             // 
@@ -522,8 +503,8 @@
             // nonFlickerSplitContainer3.Panel1
             // 
             this.nonFlickerSplitContainer3.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(188)))), ((int)(((byte)(249)))));
+            this.nonFlickerSplitContainer3.Panel1.Controls.Add(this.comboBox1);
             this.nonFlickerSplitContainer3.Panel1.Controls.Add(this.listView2);
-            this.nonFlickerSplitContainer3.Panel1.Controls.Add(this.textBox1);
             this.nonFlickerSplitContainer3.Panel1.Controls.Add(this.label1);
             // 
             // nonFlickerSplitContainer3.Panel2
@@ -534,25 +515,29 @@
             this.nonFlickerSplitContainer3.SplitterDistance = 137;
             this.nonFlickerSplitContainer3.TabIndex = 0;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(53, 10);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(216, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // listView2
             // 
             this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
             this.listView2.Location = new System.Drawing.Point(13, 36);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(256, 92);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(52, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 20);
-            this.textBox1.TabIndex = 1;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -570,11 +555,16 @@
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(10, 10);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(259, 323);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // header1
             // 
@@ -604,7 +594,6 @@
             this.nonFlickerSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).EndInit();
             this.nonFlickerSplitContainer1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer2.Panel1.PerformLayout();
@@ -631,12 +620,11 @@
         private NonFlickerSplitContainer nonFlickerSplitContainer3;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNameTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox3;
@@ -657,8 +645,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private TableControl tableControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private TableControl tableControl2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
-            this.header1 = new CafeManager.Header();
-            this.formEclipse1 = new CafeManager.FormEclipse(this.components);
-            this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.customPanel2 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.customPanel1.SuspendLayout();
-            this.customPanel2.SuspendLayout();
+            this.customPanel2 = new CafeManager.Custom_Control.CustomPanel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.header1 = new CafeManager.Header();
+            this.formEclipse1 = new CafeManager.FormEclipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.customPanel2.SuspendLayout();
+            this.customPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -57,63 +57,6 @@
             this.button2.Text = "LOGIN";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // header1
-            // 
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(334, 41);
-            this.header1.TabIndex = 4;
-            this.header1.TargetControl = this;
-            // 
-            // formEclipse1
-            // 
-            this.formEclipse1.ElipseRadius = 20;
-            this.formEclipse1.TargetControl = this;
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.customPanel1.Controls.Add(this.textBox1);
-            this.customPanel1.ElipseRadius = 0;
-            this.customPanel1.Location = new System.Drawing.Point(49, 147);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(233, 51);
-            this.customPanel1.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(15, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 15);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Username";
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.customPanel2.Controls.Add(this.textBox2);
-            this.customPanel2.ElipseRadius = 0;
-            this.customPanel2.Location = new System.Drawing.Point(49, 216);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(233, 51);
-            this.customPanel2.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(15, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(203, 15);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Password";
             // 
             // pictureBox1
             // 
@@ -140,6 +83,63 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.customPanel2.Controls.Add(this.textBox2);
+            this.customPanel2.ElipseRadius = 0;
+            this.customPanel2.Location = new System.Drawing.Point(49, 216);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(233, 51);
+            this.customPanel2.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(15, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(203, 16);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "Password";
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.customPanel1.Controls.Add(this.textBox1);
+            this.customPanel1.ElipseRadius = 0;
+            this.customPanel1.Location = new System.Drawing.Point(49, 147);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(233, 51);
+            this.customPanel1.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(15, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(203, 18);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Username";
+            // 
+            // header1
+            // 
+            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header1.Location = new System.Drawing.Point(0, 0);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(334, 41);
+            this.header1.TabIndex = 4;
+            this.header1.TargetControl = this;
+            // 
+            // formEclipse1
+            // 
+            this.formEclipse1.ElipseRadius = 20;
+            this.formEclipse1.TargetControl = this;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,11 +157,12 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
