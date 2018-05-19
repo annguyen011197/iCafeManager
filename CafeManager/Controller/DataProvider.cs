@@ -18,7 +18,7 @@ namespace CafeManager.Controller
             return instance;
         }
 
-        private string connectionString = @"Data Source=DESKTOP-JIVOC4C\SQLEXPRESS;Initial Catalog=QLCafe;Integrated Security=True";
+        private string connectionString = @"Data Source=DESKTOP-JIVOC4C\SQLEXPRESS;Initial Catalog=iCafe;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

@@ -21,13 +21,13 @@ namespace CafeManager.Service
 
         public void delete(string id)
         {
-            string query = "DELETE FROM dbo.Account WHERE UserName='" + id + "'";
+            string query = "DELETE FROM dbo.Account WHERE Username='" + id + "'";
             int data = (int)DataProvider.getController().ExecuteNonQuery(query);
         }
 
         public void delete(Account entity)
         {
-            delete(entity.UserName);
+            delete(entity.Username);
         }
 
         public void delete(List<Account> listEntity)
@@ -42,7 +42,7 @@ namespace CafeManager.Service
 
         public bool exists(string id)
         {
-            string query = "SELECT COUNT(*) as Count from dbo.Account t where t.UserName = '" + id + "'";
+            string query = "SELECT COUNT(*) as Count from dbo.Account t where t.Username = '" + id + "'";
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             if (count == 0) return false;
             return true;
@@ -61,7 +61,7 @@ namespace CafeManager.Service
 
         public Account findOne(string id)
         {
-            string query = "SELECT * from dbo.Account t where t.UserName = '" + id + "'" ;
+            string query = "SELECT * from dbo.Account t where t.Username = '" + id + "'" ;
             List<Account> list = DataProvider.getController().ExecuteQuery(query).DataTableToList<Account>();
             if (list == null) return null;
             if (list.Count == 0) return null;
@@ -70,7 +70,7 @@ namespace CafeManager.Service
 
         public bool save(Account entity)
         {
-            string query = "INSERT INTO dbo.Account VALUES('"+ entity.UserName + "','" + entity.DisplayName + "','" + entity.PassWord +"','" + entity.Type+"')";
+            string query = "INSERT INTO dbo.Account VALUES('"+ entity.Username + "','" + entity.Display_Name + "','" + entity.Password +"','" + entity.Type+"','" + entity.Info.ToString()+"')";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
@@ -87,7 +87,7 @@ namespace CafeManager.Service
 
         public bool update(Account entity)
         {
-            string query = "UPDATE dbo.Account SET PassWord='" + entity.PassWord + "',DisplayName=N'" + entity.DisplayName + "',Type='" + entity.Type + "' WHERE ID='" + entity.UserName + "'";
+            string query = "UPDATE dbo.Account SET Password='" + entity.Password + "',Display_Name=N'" + entity.Display_Name + "',Type='" + entity.Type.ToString() + "',Info" + entity.Info.ToString() + "' WHERE Username='" + entity.Username + "'";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

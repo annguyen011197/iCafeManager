@@ -14,6 +14,9 @@ namespace CafeManager
     public partial class TableControl : UserControl
     {
         private Table table;
+        private List<Food> listFood = new List<Food>();
+        private List<Bill_Info> listBillInfo = new List<Bill_Info>();
+        private Customer customer;
 
         public delegate void onClickTable(TableControl tb);
 
@@ -30,9 +33,9 @@ namespace CafeManager
             }
             set {
                 table = value;
-                label1.Text = table.Name;
-                label2.Text = table.Status ? "Có Người" : "Trống";
-                if (!table.Status)
+                label1.Text = table.TableName;
+                label2.Text = table.TableStatus ? "Có Người" : "Trống";
+                if (!table.TableStatus)
                 {
                     this.BackColor = Color.FromArgb(241, 196, 15);
                 }
@@ -43,8 +46,41 @@ namespace CafeManager
             }
         }
 
+
+        public List<Food> ListFood { 
+            get
+            {
+                return listFood;
+            }
+            set
+            {
+                listFood = value;
+            }
+        }
+
+        public List<Bill_Info> ListBill_Info
+        {
+            get
+            {
+                return listBillInfo;
+            }
+            set
+            {
+                listBillInfo = value;
+            }
+        }
+
+        public void addFood(Food food, int num)
+        {
+            Bill_Info bill = new Bill_Info();
+            bill.Food = food.ID;
+            bill.FoodCount = num;
+            listBillInfo.Add(bill);
+            listFood.Add(food);
+        }
+
         public void check(){
-            if (!table.Status)
+            if (!table.TableStatus)
             {
                 this.BackColor = Color.FromArgb(243, 156, 18);
             }
@@ -56,7 +92,7 @@ namespace CafeManager
         }
         public void unCheck()
         {
-            if (!table.Status)
+            if (!table.TableStatus)
             {
                 this.BackColor = Color.FromArgb(241, 196, 15);
             }
@@ -81,5 +117,7 @@ namespace CafeManager
         {
             onClick(this);
         }
+
+
     }
 }

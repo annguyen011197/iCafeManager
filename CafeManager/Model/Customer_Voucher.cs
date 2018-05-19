@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Model
 {
-    public class Table
+    public class Customer_Voucher
     {
         public int ID { get; set; }
-        public string TableName { get; set; }
-        public bool TableStatus { get; set; }
+        public int ID_Customer { get; set; }
+        public int ID_Voucher { set; get; }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Model
 {
-    public class Table
+    public class Voucher
     {
         public int ID { get; set; }
-        public string TableName { get; set; }
-        public bool TableStatus { get; set; }
+        public DateTime Expired { get; set; }
+        public int VCValue { get; set; }
     }
 }

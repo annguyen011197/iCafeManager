@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Model
 {
-    public class Table
+    public class Category
     {
         public int ID { get; set; }
-        public string TableName { get; set; }
-        public bool TableStatus { get; set; }
+        public string CategoryName { get; set; }
     }
 }

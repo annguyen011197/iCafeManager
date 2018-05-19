@@ -15,6 +15,7 @@ namespace CafeManager.ManagerForm
 {
     public partial class AddNew : Form
     {
+
         public AddNew()
         {
             InitializeComponent();
@@ -37,14 +38,14 @@ namespace CafeManager.ManagerForm
                 MessageBox.Show("Tài khoản và mật khẩu không được bỏ trống!");
             }
             Account account = new Account();
-            account.DisplayName = textBox3.Text;
-            account.UserName = textBox1.Text; // Thêm kiểm tra tên
-            account.PassWord = textBox2.Text.makeMD5(); // Thêm kiểm tra mật khẩu
+            account.Display_Name = textBox3.Text;
+            account.Username = textBox1.Text; // Thêm kiểm tra tên
+            account.Password = textBox2.Text.makeMD5(); // Thêm kiểm tra mật khẩu
             account.Type = 0;
             bool done = AccountController.getController().createAccount(account);
             if (done)
             {
-                MessageBox.Show("Tạo thành công tài khoản: " + account.UserName);
+                MessageBox.Show("Tạo thành công tài khoản: " + account.Username);
                 this.Close();
             }
             else
@@ -52,5 +53,7 @@ namespace CafeManager.ManagerForm
                 MessageBox.Show("Tên tài khoản đã tồn tại!");
             }
         }
+
+       
     }
 }

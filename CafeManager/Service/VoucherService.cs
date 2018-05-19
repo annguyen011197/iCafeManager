@@ -10,27 +10,27 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Service
 {
-    class TableService : BaseService<Table, int>
+    class VoucherService : BaseService<Voucher, int>
     {
         public long count()
         {
-            string query = "SELECT COUNT(*) as Count from dbo.TableIn";
+            string query = "SELECT COUNT(*) as Count from dbo.Voucher";
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             return count;
         }
 
         public void delete(int id)
         {
-            string query = "DELETE FROM dbo.TableIn WHERE ID='" + id.ToString() + "'";
+            string query = "DELETE FROM dbo.Voucher WHERE ID='" + id.ToString() + "'";
             int data = (int)DataProvider.getController().ExecuteNonQuery(query);
         }
 
-        public void delete(Table entity)
+        public void delete(Voucher entity)
         {
             delete(entity.ID);
         }
 
-        public void delete(List<Table> listEntity)
+        public void delete(List<Voucher> listEntity)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace CafeManager.Service
 
         public bool exists(int id)
         {
-            string query = "SELECT COUNT(*) as Count from dbo.TableIn t where t.ID = '" + id.ToString() + "'";
+            string query = "SELECT COUNT(*) as Count from dbo.Voucher t where t.ID = '" + id.ToString() + "'";
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             if (count == 0) return false;
             return true;
@@ -50,7 +50,7 @@ namespace CafeManager.Service
 
         public DataTable findAll()
         {
-            string query = "SELECT * from dbo.TableIn";
+            string query = "SELECT * from dbo.Voucher";
             return DataProvider.getController().ExecuteQuery(query);
         }
 
@@ -59,23 +59,23 @@ namespace CafeManager.Service
             throw new NotImplementedException();
         }
 
-        public Table findOne(int id)
+        public Voucher findOne(int id)
         {
-            string query = "SELECT * from dbo.TableIn t where t.ID = '" + id.ToString() + "'" ;
-            List<Table> list = DataProvider.getController().ExecuteQuery(query).DataTableToList<Table>();
+            string query = "SELECT * from dbo.Voucher t where t.ID = '" + id.ToString() + "'" ;
+            List<Voucher> list = DataProvider.getController().ExecuteQuery(query).DataTableToList<Voucher>();
             if (list == null) return null;
             if (list.Count == 0) return null;
             return list[0];
         }
 
-        public bool save(Table entity)
+        public bool save(Voucher entity)
         {
-            string query = "INSERT INTO dbo.TableIn VALUES('" + entity.ID.ToString() + "','" + entity.TableName + "','" + entity.TableStatus.ToString() +"')";
+            string query = "INSERT INTO dbo.Voucher VALUES('" + entity.ID.ToString() + "','" + entity.Expired.ConvertDate() + "','" + entity.VCValue.ToString() +"')";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
 
-        public bool save(List<Table> listEntity)
+        public bool save(List<Voucher> listEntity)
         {
             int count = 0;
             foreach(var item in listEntity)
@@ -85,14 +85,14 @@ namespace CafeManager.Service
             return count != 0;
         }
 
-        public bool update(Table entity)
+        public bool update(Voucher entity)
         {
-            string query = "UPDATE dbo.TableIn SET Name=N'" + entity.TableName + "',Status='" + entity.TableStatus.ToString() + "' WHERE ID='" + entity.ID.ToString() + "'";
+            string query = "UPDATE dbo.Voucher SET Expired='" + entity.Expired.ConvertDate() + "',VCValue='" + entity.VCValue.ToString() + "' WHERE ID='" + entity.ID.ToString() + "'";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
 
-        public bool update(List<Table> listEntity)
+        public bool update(List<Voucher> listEntity)
         {
             throw new NotImplementedException();
         }

@@ -8,24 +8,12 @@ namespace CafeManager.Model
 {
     public class Account
     {
-        private string userName;
-        public string UserName { get => userName; set => userName = value; }
-
-        private string passWord;
-        public string PassWord { get => passWord; set => passWord = value; }
-
-        private string displayName;
-        public string DisplayName { get => displayName; set => displayName = value; }
-
-        private int type;
-        public int Type { get => type; set => type = value; }
-
-        //public Account(string userName, string passWord, string displayName, int type)
-        //{
-        //    this.userName = userName;
-        //    this.passWord = passWord;
-        //    this.displayName = displayName;
-        //    this.type = type;
-        //}
+        public string ID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Display_Name { get; set; }
+        public int Type { get; set; }
+        public int Info { get; set; }
+        public string Color { get; set; }
     }
 }

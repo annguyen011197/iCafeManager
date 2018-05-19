@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CafeManager.Utils;
 namespace CafeManager.Controller
 {
     class AccountController 
@@ -24,21 +24,26 @@ namespace CafeManager.Controller
             accountService = new AccountService();
         }
 
-        public bool checkAccount(string userName, string passWord)
+        public Account checkAccount(string userName, string passWord)
         {
             Account account = accountService.findOne(userName);
-            if (account == null) return false;
-            if (passWord == account.PassWord) return true;
-            return false;
+            if (account == null) return null;
+            if (passWord == account.Password) return account;
+            return null;
         }
 
         public bool createAccount(Account account)
         {
-            if (accountService.exists(account.UserName))
+            if (accountService.exists(account.Username))
             {
                 return false;
             }
             return accountService.save(account);
+        }
+
+        public List<Account> getList()
+        {
+            return accountService.findAll().DataTableToList<Account>();
         }
     }
 }
