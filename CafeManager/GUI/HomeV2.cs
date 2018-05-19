@@ -299,10 +299,6 @@ namespace CafeManager
                     listView3.Items[id].Remove();
                     updateListChoose();
                 }
-                else
-                {
-                    MessageBox.Show("Chưa chọn hoặc bàn còn trống!");
-                }
             }
         }
     }

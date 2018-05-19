@@ -1,4 +1,5 @@
 ﻿using CafeManager.Controller;
+using CafeManager.GUI;
 using CafeManager.Model;
 using CafeManager.Utils;
 using System;
@@ -38,7 +39,8 @@ namespace CafeManager
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new HomeV2().Show();
+            new ReportView().ShowDialog();
+            //new HomeV2().Show();
             //string userName = textBox1.Text;
             //string passWord = textBox2.Text.makeMD5();
             //if (userName == "" || passWord == "")

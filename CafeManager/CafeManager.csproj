@@ -32,9 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,10 +145,17 @@
     <Compile Include="GUI\ManagerForm\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReportView.Designer.cs">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Account_Info.cs" />
     <Compile Include="Model\Account_Type.cs" />
     <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillReport.cs" />
     <Compile Include="Model\Bill_Info.cs" />
     <Compile Include="Model\Bill_Voucher.cs" />
     <Compile Include="Model\Category.cs" />
@@ -168,6 +188,10 @@
     <Compile Include="Utils\ColorUtils.cs" />
     <Compile Include="Utils\HelperUtils.cs" />
     <Compile Include="Utils\MD5.cs" />
+    <EmbeddedResource Include="Bill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReportView.resx">
+      <DependentUpon>ReportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image\icons8-box-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
