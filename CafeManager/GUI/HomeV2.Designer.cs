@@ -229,6 +229,7 @@
             this.listView3.Size = new System.Drawing.Size(344, 177);
             this.listView3.TabIndex = 8;
             this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.DoubleClick += new System.EventHandler(this.listView3_DoubleClick);
             // 
             // customPanel1
             // 

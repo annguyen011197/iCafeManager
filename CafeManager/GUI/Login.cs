@@ -38,7 +38,7 @@ namespace CafeManager
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Manager().Show();
+            new HomeV2().Show();
             //string userName = textBox1.Text;
             //string passWord = textBox2.Text.makeMD5();
             //if (userName == "" || passWord == "")
