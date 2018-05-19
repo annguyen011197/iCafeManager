@@ -19,6 +19,12 @@ namespace CafeManager.ManagerForm
         public Staff()
         {
             InitializeComponent();
+            this.lbName.Text = "";
+            this.lbBirthay.Text = "";
+            this.lbType.Text = "";
+            this.rtbAdress.Text = "";
+            this.rtbNote.Text = "";
+            this.lbPhone.Text = "";
             updateData();
         }
 
@@ -40,6 +46,8 @@ namespace CafeManager.ManagerForm
         public void onClickAccountEvent(AccountControl tb)
         {
             //la.Text = tb.Table.Name;
+            Account account = tb.Account;
+            Tuple<Account_Info,Account_Type> info =  Account_InfoController.getController().findOneWithType(account.Username);
             unCheckTable();
             tb.check();
         }
@@ -89,6 +97,11 @@ namespace CafeManager.ManagerForm
             {
 
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

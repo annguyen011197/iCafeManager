@@ -52,87 +52,89 @@
     <Compile Include="Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\Account_InfoController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\FoodController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
-    <Compile Include="Custom Control\CustomPanel.cs">
+    <Compile Include="GUI\Custom Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Custom Control\Elipse.cs" />
-    <Compile Include="Custom Control\ExitButton.cs">
+    <Compile Include="GUI\Custom Control\Elipse.cs" />
+    <Compile Include="GUI\Custom Control\ExitButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Custom Control\ExitButton.Designer.cs">
+    <Compile Include="GUI\Custom Control\ExitButton.Designer.cs">
       <DependentUpon>ExitButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Custom Control\FormEclipse.cs">
+    <Compile Include="GUI\Custom Control\FormEclipse.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Custom Control\FormEclipse.Designer.cs">
+    <Compile Include="GUI\Custom Control\FormEclipse.Designer.cs">
       <DependentUpon>FormEclipse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Custom Control\Graphics.cs" />
-    <Compile Include="Custom Control\Header.cs">
+    <Compile Include="GUI\Custom Control\Graphics.cs" />
+    <Compile Include="GUI\Custom Control\Header.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Custom Control\Header.Designer.cs">
+    <Compile Include="GUI\Custom Control\Header.Designer.cs">
       <DependentUpon>Header.cs</DependentUpon>
     </Compile>
-    <Compile Include="Custom Control\NonFlickerSplitContainer.cs">
+    <Compile Include="GUI\Custom Control\NonFlickerSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Custom Control\TextboxCustom.cs">
+    <Compile Include="GUI\Custom Control\TextboxCustom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Custom Control\TextboxCustom.Designer.cs">
+    <Compile Include="GUI\Custom Control\TextboxCustom.Designer.cs">
       <DependentUpon>TextboxCustom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="GUI\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeV2.cs">
+    <Compile Include="GUI\HomeV2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeV2.Designer.cs">
+    <Compile Include="GUI\HomeV2.Designer.cs">
       <DependentUpon>HomeV2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs">
+    <Compile Include="GUI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manager.Designer.cs">
+    <Compile Include="GUI\Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm\AddNew.cs">
+    <Compile Include="GUI\ManagerForm\AddNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm\AddNew.Designer.cs">
+    <Compile Include="GUI\ManagerForm\AddNew.Designer.cs">
       <DependentUpon>AddNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm\InputNumber.cs">
+    <Compile Include="GUI\ManagerForm\InputNumber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm\InputNumber.Designer.cs">
+    <Compile Include="GUI\ManagerForm\InputNumber.Designer.cs">
       <DependentUpon>InputNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm\Staff.cs">
+    <Compile Include="GUI\ManagerForm\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm\Staff.Designer.cs">
+    <Compile Include="GUI\ManagerForm\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Account_Info.cs" />
+    <Compile Include="Model\Account_Type.cs" />
     <Compile Include="Model\Bill.cs" />
     <Compile Include="Model\Bill_Info.cs" />
     <Compile Include="Model\Bill_Voucher.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="Model\Voucher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Account_InfoService.cs" />
     <Compile Include="Service\CategoryService.cs" />
     <Compile Include="Service\FoodService.cs" />
     <Compile Include="Service\VoucherService.cs" />
@@ -168,37 +171,37 @@
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\CustomPanel.resx">
+    <EmbeddedResource Include="GUI\Custom Control\CustomPanel.resx">
       <DependentUpon>CustomPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\ExitButton.resx">
+    <EmbeddedResource Include="GUI\Custom Control\ExitButton.resx">
       <DependentUpon>ExitButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\Header.resx">
+    <EmbeddedResource Include="GUI\Custom Control\Header.resx">
       <DependentUpon>Header.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\TextboxCustom.resx">
+    <EmbeddedResource Include="GUI\Custom Control\TextboxCustom.resx">
       <DependentUpon>TextboxCustom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="GUI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeV2.resx">
+    <EmbeddedResource Include="GUI\HomeV2.resx">
       <DependentUpon>HomeV2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager.resx">
+    <EmbeddedResource Include="GUI\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm\AddNew.resx">
+    <EmbeddedResource Include="GUI\ManagerForm\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm\InputNumber.resx">
+    <EmbeddedResource Include="GUI\ManagerForm\InputNumber.resx">
       <DependentUpon>InputNumber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm\Staff.resx">
+    <EmbeddedResource Include="GUI\ManagerForm\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
