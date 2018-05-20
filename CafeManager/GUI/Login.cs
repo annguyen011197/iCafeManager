@@ -39,16 +39,16 @@ namespace CafeManager
         {
             this.Hide();
             new Manager().Show();
-            //string userName = textBox1.Text;
-            //string passWord = textBox2.Text.makeMD5();
-            //if (userName == "" || passWord == "")
+            //string username = textBox1.Text;
+            //string password = textBox2.Text.makeMD5();
+            //if (username == "" || password == "")
             //{
-            //    MessageBox.Show("Tài khoản và mật khẩu không được bỏ trống");
+            //    MessageBox.Show("tài khoản và mật khẩu không được bỏ trống");
             //}
-            //Account account = AccountController.getController().checkAccount(userName, passWord);
+            //Account account = AccountController.getController().checkAccount(username, password);
             //if (account != null)
             //{
-            //    if(account.Type == 2)
+            //    if (account.Type == 1 || account.Type == 2)
             //    {
             //        this.Hide();
             //        new Manager().Show();
@@ -61,7 +61,7 @@ namespace CafeManager
             //}
             //else
             //{
-            //    MessageBox.Show("Tài khoản nhập sai");
+            //    MessageBox.Show("tài khoản nhập sai");
             //}
 
 

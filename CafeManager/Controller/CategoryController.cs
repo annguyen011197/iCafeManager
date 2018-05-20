@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CafeManager.Utils;
+using System.Data;
+
 namespace CafeManager.Controller
 {
     class CategoryController
@@ -27,6 +29,11 @@ namespace CafeManager.Controller
         public List<Category> getListCategory()
         {
             return foodService.findAll().DataTableToList<Category>();
+        }
+
+        public DataTable getTableCategory()
+        {
+            return foodService.findAll();
         }
     }
 }

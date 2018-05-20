@@ -28,5 +28,20 @@ namespace CafeManager.Controller
         {
             return accountService.findOneWithType(id);
         }
+
+        public int SaveNone()
+        {
+            return accountService.saveGetID();
+        }
+
+        public int SaveNew(Account_Info ai)
+        {
+            return accountService.saveNew(ai);
+        }
+
+        public bool Update(Account_Info account_Info)
+        {
+            return accountService.update(account_Info);
+        }
     }
 }

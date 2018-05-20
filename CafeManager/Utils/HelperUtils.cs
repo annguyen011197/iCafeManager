@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -164,5 +167,38 @@ namespace CafeManager.Utils
                 return DateTime.MinValue;
             return value;
         }
+
+        public static Image ObjToImg(object obj)
+        {
+            if (obj == null)
+                return null;
+            else
+            {
+                byte[] byteArray = (byte[])obj;
+                Image returnImage = null;
+                using (var ms = new MemoryStream(byteArray, 0, byteArray.Length))
+                {
+                    try
+                    {
+                        returnImage = System.Drawing.Image.FromStream(ms);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Err");
+                    }
+                    
+                }
+                return returnImage;
+            }
+        }
+        public static String ConvertDateTime(String datetime)
+        {
+            //DateTime dt = DateTime.ParseExact(datetime, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+            //DateTime dt = DateTime.ParseExact(datetime, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+            DateTime dt = DateTime.Parse(datetime);
+            return dt.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //return "";
+        }
+
     }
 }
