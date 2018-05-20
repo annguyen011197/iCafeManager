@@ -38,32 +38,32 @@ namespace CafeManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Manager().Show();
-            //string userName = textBox1.Text;
-            //string passWord = textBox2.Text.makeMD5();
-            //if (userName == "" || passWord == "")
-            //{
-            //    MessageBox.Show("tài khoản và mật khẩu không được bỏ trống");
-            //}
-            //Account account = AccountController.getController().checkAccount(username, password);
-            //if (account != null)
-            //{
-            //    if (account.Type == 1 || account.Type == 2)
-            //    {
-            //        this.Hide();
-            //        new Manager().Show();
-            //    }
-            //    else
-            //    {
-            //        this.Hide();
-            //        new HomeV2().Show();
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("tài khoản nhập sai");
-            //}
+            //this.Hide();
+            //new Manager().Show();
+            string userName = textBox1.Text;
+            string passWord = textBox2.Text.makeMD5();
+            if (userName == "" || passWord == "")
+            {
+                MessageBox.Show("tài khoản và mật khẩu không được bỏ trống");
+            }
+            Account account = AccountController.getController().checkAccount(username, password);
+            if (account != null)
+            {
+                if (account.Type == 1 || account.Type == 2)
+                {
+                    this.Hide();
+                    new Manager().Show();
+                }
+                else
+                {
+                    this.Hide();
+                    new HomeV2().Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("tài khoản nhập sai");
+            }
 
 
         }

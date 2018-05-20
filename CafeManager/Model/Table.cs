@@ -11,5 +11,6 @@ namespace CafeManager.Model
         public int ID { get; set; }
         public string TableName { get; set; }
         public bool TableStatus { get; set; }
+        public int IDBill { get; set; }
     }
 }

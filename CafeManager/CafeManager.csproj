@@ -67,8 +67,12 @@
     </Compile>
     <Compile Include="Controller\Account_InfoController.cs" />
     <Compile Include="Controller\Account_TypeController.cs" />
+    <Compile Include="Controller\Bill_InfoController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\FoodController.cs" />
+    <Compile Include="Controller\BillControllery.cs" />
+    <Compile Include="Controller\VoucherController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
@@ -107,12 +111,6 @@
     <Compile Include="GUI\Custom Control\TextboxCustom.Designer.cs">
       <DependentUpon>TextboxCustom.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\HomeV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +147,12 @@
     <Compile Include="GUI\ManagerForm\AddNew.Designer.cs">
       <DependentUpon>AddNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManagerForm\AddNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\AddNewCustomer.Designer.cs">
+      <DependentUpon>AddNewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManagerForm\AddNewFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +170,12 @@
     </Compile>
     <Compile Include="GUI\ManagerForm\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManagerForm\EditItems.cs">
       <SubType>Form</SubType>
@@ -220,8 +230,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Account_InfoService.cs" />
     <Compile Include="Service\Account_TypeService.cs" />
+    <Compile Include="Service\Bill_VoucherService.cs" />
+    <Compile Include="Service\Bill_InfoService.cs" />
     <Compile Include="Service\CategoryService.cs" />
+    <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\FoodService.cs" />
+    <Compile Include="Service\BillService.cs" />
     <Compile Include="Service\VoucherService.cs" />
     <Compile Include="Service\TableService.cs" />
     <Compile Include="Service\AccountService.cs" />
@@ -241,6 +255,7 @@
     <Compile Include="Utils\ColorUtils.cs" />
     <Compile Include="Utils\HelperUtils.cs" />
     <Compile Include="Utils\MD5.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
     <EmbeddedResource Include="BillReportPage.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BillReportPage.cs</LastGenOutput>
@@ -260,9 +275,6 @@
     <EmbeddedResource Include="GUI\Custom Control\TextboxCustom.resx">
       <DependentUpon>TextboxCustom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\HomeV2.resx">
       <DependentUpon>HomeV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +293,9 @@
     <EmbeddedResource Include="GUI\ManagerForm\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\AddNewCustomer.resx">
+      <DependentUpon>AddNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\AddNewFood.resx">
       <DependentUpon>AddNewFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\EditItems.resx">
       <DependentUpon>EditItems.cs</DependentUpon>
@@ -381,6 +399,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

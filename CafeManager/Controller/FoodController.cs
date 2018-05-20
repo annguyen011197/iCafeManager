@@ -75,5 +75,10 @@ namespace CafeManager.Controller
         {
             return foodService.getAllWithType(text);
         }
+
+        public Food findFood(int id)
+        {
+            return foodService.findOne(id);
+        }
     }
 }

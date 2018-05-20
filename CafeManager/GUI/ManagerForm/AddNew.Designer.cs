@@ -118,7 +118,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CafeManager.Properties.Resources.Untitled;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 9;

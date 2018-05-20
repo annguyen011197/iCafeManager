@@ -1,4 +1,5 @@
-﻿using CafeManager.Model;
+﻿using CafeManager.Controller;
+using CafeManager.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,12 +18,14 @@ namespace CafeManager.Service
 
         public void delete(int id)
         {
-            throw new NotImplementedException();
+            String query = @"delete from dbo.Customer where ID = "+id;
+            DataProvider.getController().ExecuteNonQuery(query);
         }
 
         public void delete(Customer entity)
         {
-            throw new NotImplementedException();
+            // String query = @"select * from dbo.Customer";
+            delete(entity.ID);
         }
 
         public void delete(List<Customer> listEntity)
@@ -42,7 +45,9 @@ namespace CafeManager.Service
 
         public DataTable findAll()
         {
-            throw new NotImplementedException();
+            String query = @"select * from dbo.Customer";
+            return DataProvider.getController().ExecuteQuery(query);
+            //throw new NotImplementedException();
         }
 
         public DataTable findAll(List<int> listId)
@@ -57,7 +62,14 @@ namespace CafeManager.Service
 
         public bool save(Customer entity)
         {
-            throw new NotImplementedException();
+            String query = String.Format(@"insert into Customer (CustomerName, Phone, CustomerAddress, Note, IDNumber) values ('{0}', '{1}', '{2}', '{3}','{4}')",
+                entity.CustomerName,
+                entity.Phone,
+                entity.CustomerAddress,
+                entity.Note,
+                entity.IDNumber
+                );
+            return DataProvider.getController().ExecuteNonQuery(query) != 0;
         }
 
         public bool save(List<Customer> listEntity)
@@ -67,7 +79,13 @@ namespace CafeManager.Service
 
         public bool update(Customer entity)
         {
-            throw new NotImplementedException();
+            String query = String.Format(@"update dbo.Customer
+set CustomerName=N'{0}',Phone=N'{1}',CustomerAddress=N'{2}',Note=N'{3}'
+where IDNumber={4}",
+                    entity.CustomerName,entity.Phone, entity.CustomerAddress,
+                    entity.Note,entity.IDNumber
+                    );
+            return DataProvider.getController().ExecuteNonQuery(query)!=0;
         }
 
         public bool update(List<Customer> listEntity)

@@ -28,5 +28,10 @@ namespace CafeManager.Controller
         {
             return tableService.findAll().DataTableToList<Table>();
         }
+
+        public void saveTable(Table table)
+        {
+            tableService.update(table);
+        }
     }
 }

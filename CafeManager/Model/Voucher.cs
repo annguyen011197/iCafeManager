@@ -11,5 +11,7 @@ namespace CafeManager.Model
         public int ID { get; set; }
         public DateTime Expired { get; set; }
         public int VCValue { get; set; }
+        public bool Type { get; set; }
+        public string Code { get; set; }
     }
 }

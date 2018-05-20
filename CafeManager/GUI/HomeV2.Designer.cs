@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.header1 = new CafeManager.Header();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).BeginInit();
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
@@ -579,12 +580,28 @@
             this.header1.TabIndex = 0;
             this.header1.TargetControl = null;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Turquoise;
+            this.button8.BackgroundImage = global::CafeManager.Properties.Resources.add;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(0, -1);
+            this.button8.Name = "button8";
+            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button8.Size = new System.Drawing.Size(47, 35);
+            this.button8.TabIndex = 3;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // HomeV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CafeManager.Properties.Resources.background1;
             this.ClientSize = new System.Drawing.Size(963, 538);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.nonFlickerSplitContainer1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.header1);
@@ -649,5 +666,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button8;
     }
 }

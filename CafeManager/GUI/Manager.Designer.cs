@@ -30,14 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.contentPanel = new CafeManager.Custom_Control.CustomPanel();
-            this.header1 = new CafeManager.Header();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.contentPanel = new CafeManager.Custom_Control.CustomPanel();
+            this.header1 = new CafeManager.Header();
             this.exitButton1 = new CafeManager.Custom_Control.ExitButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
+            this.contentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -52,28 +55,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 54);
             this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // contentPanel
-            // 
-            this.contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contentPanel.ElipseRadius = 0;
-            this.contentPanel.Location = new System.Drawing.Point(0, 101);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(801, 349);
-            this.contentPanel.TabIndex = 5;
-            // 
-            // header1
-            // 
-            this.header1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.header1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(171)))), ((int)(((byte)(169)))));
-            this.header1.Location = new System.Drawing.Point(-1, -1);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(801, 35);
-            this.header1.TabIndex = 0;
-            this.header1.TargetControl = null;
             // 
             // button1
             // 
@@ -162,6 +143,29 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // contentPanel
+            // 
+            this.contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contentPanel.Controls.Add(this.pictureBox1);
+            this.contentPanel.ElipseRadius = 0;
+            this.contentPanel.Location = new System.Drawing.Point(0, 101);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(801, 349);
+            this.contentPanel.TabIndex = 5;
+            // 
+            // header1
+            // 
+            this.header1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.header1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(171)))), ((int)(((byte)(169)))));
+            this.header1.Location = new System.Drawing.Point(-1, -1);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(801, 35);
+            this.header1.TabIndex = 0;
+            this.header1.TargetControl = null;
+            // 
             // exitButton1
             // 
             this.exitButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -175,6 +179,15 @@
             this.exitButton1.TabIndex = 2;
             this.exitButton1.UseVisualStyleBackColor = false;
             this.exitButton1.Click += new System.EventHandler(this.btnExitClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CafeManager.Properties.Resources.Untitled;
+            this.pictureBox1.Location = new System.Drawing.Point(153, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(455, 303);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Manager
             // 
@@ -192,6 +205,8 @@
             this.Text = "Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.contentPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +221,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Custom_Control.CustomPanel contentPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
