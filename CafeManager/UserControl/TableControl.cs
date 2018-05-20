@@ -136,6 +136,7 @@ namespace CafeManager
 
         public void removeFood(int id)
         {
+            Bill_InfoController.getController().deleteBill_Info(listBillInfo[id]);
             listFood.RemoveAt(id);
             listBillInfo.RemoveAt(id);
         }

@@ -34,6 +34,11 @@ namespace CafeManager.Controller
             bill_InfoService.update(bill);
         }
 
+        public void deleteBill_Info(Bill_Info bill)
+        {
+            bill_InfoService.delete(bill);
+        }
+
         public List<Bill_Info> getListFromBill(int id)
         {
             return bill_InfoService.findAllFromIdBill(id).DataTableToList<Bill_Info>();
