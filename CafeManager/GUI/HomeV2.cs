@@ -1,4 +1,5 @@
 ﻿using CafeManager.Controller;
+using CafeManager.GUI;
 using CafeManager.ManagerForm;
 using CafeManager.Model;
 using System;
@@ -300,6 +301,17 @@ namespace CafeManager
                     updateListChoose();
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Khởi tạo built mà mở ReportView lên để khởi tạo;
+            //Truyền dữ liệu theo cấu trúc như demo
+            if (chooseTable != null && chooseTable.Table.TableStatus == true)
+            {
+                new ReportView().ShowDialog(this);
+            }
+                
         }
     }
 }

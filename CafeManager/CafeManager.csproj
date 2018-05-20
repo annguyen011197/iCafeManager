@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill.cs">
+    <Compile Include="BillReportPage.cs">
+      <DependentUpon>BillReportPage.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bill.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Component1.cs">
       <SubType>Component</SubType>
@@ -188,9 +188,9 @@
     <Compile Include="Utils\ColorUtils.cs" />
     <Compile Include="Utils\HelperUtils.cs" />
     <Compile Include="Utils\MD5.cs" />
-    <EmbeddedResource Include="Bill.rpt">
+    <EmbeddedResource Include="BillReportPage.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Bill.cs</LastGenOutput>
+      <LastGenOutput>BillReportPage.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>

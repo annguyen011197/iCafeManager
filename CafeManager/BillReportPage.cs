@@ -16,14 +16,14 @@ namespace CafeManager {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Bill : ReportClass {
+    public class BillReportPage : ReportClass {
         
-        public Bill() {
+        public BillReportPage() {
         }
         
         public override string ResourceName {
             get {
-                return "Bill.rpt";
+                return "BillReportPage.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CafeManager {
         
         public override string FullResourceName {
             get {
-                return "CafeManager.Bill.rpt";
+                return "CafeManager.BillReportPage.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,60 @@ namespace CafeManager {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_ID {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Date_Check_Out {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Date_Check_In {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Table {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Customer {
+            get {
+                return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Discount {
+            get {
+                return this.DataDefinition.ParameterFields[5];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBill : Component, ICachedReport {
+    public class CachedBillReportPage : Component, ICachedReport {
         
-        public CachedBill() {
+        public CachedBillReportPage() {
         }
         
         [Browsable(false)]
@@ -129,7 +177,7 @@ namespace CafeManager {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Bill rpt = new Bill();
+            BillReportPage rpt = new BillReportPage();
             rpt.Site = this.Site;
             return rpt;
         }
