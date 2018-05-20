@@ -70,6 +70,13 @@ namespace CafeManager
             }
         }
 
+
+        public void removeFood(int id)
+        {
+            listFood.RemoveAt(id);
+            listBillInfo.RemoveAt(id);
+        }
+
         public void addFood(Food food, int num)
         {
             Bill_Info bill = new Bill_Info();

@@ -35,5 +35,21 @@ namespace CafeManager.Controller
         {
             return foodService.findAll();
         }
+
+        public bool Exist(Category cat)
+        {
+            return foodService.exists(cat);
+            //throw new NotImplementedException();
+        }
+
+        public void Update(Category cat)
+        {
+            foodService.update(cat);
+        }
+
+        public Boolean Save(Category cat)
+        {
+            return foodService.save(cat);
+        }
     }
 }

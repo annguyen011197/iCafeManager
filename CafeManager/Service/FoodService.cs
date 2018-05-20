@@ -38,7 +38,7 @@ namespace CafeManager.Service
         public  DataTable getAllWithType()
         {
             string query = @"
-                select f.ID, f.FoodName, f.Price, c.CategoryName
+                select f.ID, f.FoodName, f.Price, c.CategoryName, c.ID as CategoryID
                 from dbo.Food f, dbo.Category c
                 where f.Category = c.ID";
 
@@ -66,6 +66,16 @@ namespace CafeManager.Service
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             if (count == 0) return false;
             return true;
+        }
+
+        internal DataTable getAllWithType(string text)
+        {
+            string query = String.Format(@"
+                select f.ID, f.FoodName, f.Price, c.CategoryName, c.ID as CategoryID
+                from dbo.Food f, dbo.Category c
+                where f.Category = c.ID and c.CategoryName like N'%{0}%'",text);
+
+            return DataProvider.getController().ExecuteQuery(query);
         }
 
         public DataTable findAll()

@@ -41,6 +41,10 @@ namespace CafeManager.GUI.ManagerForm
         private void button2_Click(object sender, EventArgs e)
         {
             String type = textBox1.Text;
+            if (type.Trim() == "")
+            {
+                MessageBox.Show("Không được để trống");
+            }
             if (Types.Exists( x => x.Name==type.ToUpper())){
                 MessageBox.Show("Đã tồn tại");
             }

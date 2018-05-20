@@ -1,4 +1,5 @@
 ﻿using CafeManager.Controller;
+using CafeManager.GUI;
 using CafeManager.Model;
 using CafeManager.Utils;
 using System;
@@ -39,9 +40,9 @@ namespace CafeManager
         {
             this.Hide();
             new Manager().Show();
-            //string username = textBox1.Text;
-            //string password = textBox2.Text.makeMD5();
-            //if (username == "" || password == "")
+            //string userName = textBox1.Text;
+            //string passWord = textBox2.Text.makeMD5();
+            //if (userName == "" || passWord == "")
             //{
             //    MessageBox.Show("tài khoản và mật khẩu không được bỏ trống");
             //}

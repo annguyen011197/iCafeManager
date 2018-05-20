@@ -59,5 +59,21 @@ namespace CafeManager.Controller
         {
             return foodService.save(food);
         }
+
+        public Boolean Update(Food food)
+        {
+            return foodService.update(food); 
+        }
+
+        public void Remove(Food food)
+        {
+            foodService.delete(food);
+            //throw new NotImplementedException();
+        }
+
+        public DataTable getListFoodType(string text)
+        {
+            return foodService.getAllWithType(text);
+        }
     }
 }

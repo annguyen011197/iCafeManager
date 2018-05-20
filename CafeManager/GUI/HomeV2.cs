@@ -1,4 +1,5 @@
 ﻿using CafeManager.Controller;
+using CafeManager.GUI;
 using CafeManager.ManagerForm;
 using CafeManager.Model;
 using System;
@@ -276,9 +277,9 @@ namespace CafeManager
                     if (form.ShowDialog(this) == DialogResult.OK)
                     {
                         num = form.getNum();
+                        chooseTable.addFood(listFoodCategory[id], num);
+                        updateListChoose();
                     }
-                    chooseTable.addFood(listFoodCategory[id], num);
-                    updateListChoose();
                 }
                 else
                 {
@@ -286,6 +287,31 @@ namespace CafeManager
                 }
             }
             
+        }
+
+        private void listView3_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView3.SelectedItems.Count > 0)
+            {
+                int id = listView3.Items.IndexOf(listView3.SelectedItems[0]);
+                if (chooseTable != null && chooseTable.Table.TableStatus == true)
+                {
+                    chooseTable.removeFood(id);
+                    listView3.Items[id].Remove();
+                    updateListChoose();
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Khởi tạo built mà mở ReportView lên để khởi tạo;
+            //Truyền dữ liệu theo cấu trúc như demo
+            if (chooseTable != null && chooseTable.Table.TableStatus == true)
+            {
+                new ReportView().ShowDialog(this);
+            }
+                
         }
     }
 }

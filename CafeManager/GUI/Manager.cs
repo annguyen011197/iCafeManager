@@ -44,5 +44,15 @@ namespace CafeManager
             items.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CustomerForm form = CustomerForm.Instance;
+            form.TopLevel = false;
+            this.contentPanel.Controls.Clear();
+            this.contentPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }

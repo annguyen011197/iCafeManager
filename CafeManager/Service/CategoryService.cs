@@ -40,6 +40,14 @@ namespace CafeManager.Service
             throw new NotImplementedException();
         }
 
+        internal bool exists(Category cat)
+        {
+            string query = "SELECT COUNT(*) as Count from dbo.Category t where t.CategoryName = '" + cat.CategoryName + "'";
+            int count = (int)DataProvider.getController().ExecuteScalar(query);
+            if (count == 0) return false;
+            return true;
+        }
+
         public bool exists(int id)
         {
             string query = "SELECT COUNT(*) as Count from dbo.Category t where t.ID = '" + id.ToString() + "'";
@@ -70,7 +78,7 @@ namespace CafeManager.Service
 
         public bool save(Category entity)
         {
-            string query = "INSERT INTO dbo.Category VALUES('" + entity.ID.ToString() + "','" + entity.CategoryName + "')";
+            string query = "INSERT INTO dbo.Category VALUES('" + entity.CategoryName + "')";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
