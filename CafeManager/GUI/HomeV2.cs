@@ -157,7 +157,10 @@ namespace CafeManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (chooseTable != null && chooseTable.Table.TableStatus == false)
+            {
+                chooseTable.createBill();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -309,7 +312,37 @@ namespace CafeManager
             //Truyền dữ liệu theo cấu trúc như demo
             if (chooseTable != null && chooseTable.Table.TableStatus == true)
             {
-                new ReportView().ShowDialog(this);
+                string voucher = textBox3.Text;
+                string IDKH = textBox2.Text;
+                if(IDKH == "")
+                {
+                    chooseTable.endBill(-1);
+                }
+                else
+                {
+                    chooseTable.endBill(int.Parse(IDKH));
+                }
+                if(voucher != "")
+                {
+                    if(VoucherController.getController().checkExist(voucher) != null)
+                    {
+                        chooseTable.addVoucher(voucher);
+                    }
+                }
+                chooseTable.makeBill();
+                List<BillReport> list = new List<BillReport>();
+                int i = 0;
+                chooseTable.ListFood.ForEach(item =>
+                {
+                    BillReport br = new BillReport();
+                    br.FoodName = item.FoodName;
+                    br.Price = item.Price;
+                    br.Count = chooseTable.ListBill_Info[i].FoodCount;
+                    i++;
+                    list.Add(br);
+                });
+                new ReportView(list, chooseTable.bill).ShowDialog(this);
+                chooseTable.clearTable();
             }
                 
         }

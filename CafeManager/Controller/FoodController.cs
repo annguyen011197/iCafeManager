@@ -42,5 +42,10 @@ namespace CafeManager.Controller
             });
             return listResult;
         }
+
+        public Food findFood(int id)
+        {
+            return foodService.findOne(id);
+        }
     }
 }

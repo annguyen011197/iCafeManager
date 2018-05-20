@@ -11,7 +11,7 @@ namespace CafeManager.Model
         public int ID { get; set; }
         public DateTime Date_Check_In { get; set; }
         public DateTime Date_Check_Out { get; set; }
-        public int TableID { get; set; }
+        public int IDTable { get; set; }
         public int Discount { get; set; }
         public int Customer { get; set; }
     }

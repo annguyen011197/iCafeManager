@@ -14,6 +14,5 @@ namespace CafeManager.Model
         public string CustomerAddress { get; set; }
         public string Note { get; set; }
         public string IDNumber { get; set; }
-
     }
 }

@@ -10,7 +10,7 @@ namespace CafeManager.Model
     {
         public int ID { get; set; }
         public int ID_Bill { get; set; }
-        public int ID_Voucher { get; set; }
+        public string ID_Voucher { get; set; }
 
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CafeManager.Model;
+using CafeManager.Controller;
 
 namespace CafeManager
 {
@@ -15,7 +16,9 @@ namespace CafeManager
     {
         private Table table;
         private List<Food> listFood = new List<Food>();
+        public Bill bill = new Bill();
         private List<Bill_Info> listBillInfo = new List<Bill_Info>();
+        private List<Bill_Voucher> listVoucher = new List<Bill_Voucher>();
         private Customer customer;
 
         public delegate void onClickTable(TableControl tb);
@@ -43,6 +46,7 @@ namespace CafeManager
                 {
                     this.BackColor = Color.FromArgb(149, 165, 166);
                 }
+                loadBill();
             }
         }
 
@@ -70,6 +74,65 @@ namespace CafeManager
             }
         }
 
+        public void loadBill()
+        {
+            if(table.TableStatus == true)
+            {
+                bill =  BillController.getController().findBill(table.IDBill);
+                listBillInfo = Bill_InfoController.getController().getListFromBill(bill.ID);
+                listBillInfo.ForEach(item =>
+                {
+                    listFood.Add(FoodController.getController().findFood(item.Food));
+                });
+            }
+        }
+
+
+        public void makeBill()
+        {
+            BillController.getController().updateBill(bill);
+        }
+
+        public void clearTable()
+        {
+            table.TableStatus = false;
+            label2.Text = table.TableStatus ? "Có Người" : "Trống";
+            TableController.getController().saveTable(table);
+            listFood = new List<Food>();
+            listBillInfo = new List<Bill_Info>();
+            onClick(this);
+            
+        }
+
+        public void createBill()
+        {
+            Bill b = BillController.getController().createNoneBill();
+            bill.ID = b.ID;
+            bill.Date_Check_In = DateTime.Now;
+            bill.IDTable = table.ID;
+            bill.Discount = 0;
+            bill.Customer = -1;
+            table.IDBill = bill.ID;
+            this.Table.TableStatus = true;
+            check();
+            label2.Text = table.TableStatus ? "Có Người" : "Trống";
+            TableController.getController().saveTable(table);
+            BillController.getController().updateBill(bill);
+        }
+
+        public void endBill(int custom)
+        {
+            bill.Date_Check_Out = DateTime.Now;
+            bill.Customer = custom;
+        }
+
+        public void addVoucher(string voucher)
+        {
+            Bill_Voucher bill_Voucher = new Bill_Voucher();
+            bill_Voucher.ID_Voucher = voucher;
+            bill_Voucher.ID_Bill = bill.ID;
+            this.listVoucher.Add(bill_Voucher);
+        }
 
         public void removeFood(int id)
         {
@@ -79,10 +142,12 @@ namespace CafeManager
 
         public void addFood(Food food, int num)
         {
-            Bill_Info bill = new Bill_Info();
-            bill.Food = food.ID;
-            bill.FoodCount = num;
-            listBillInfo.Add(bill);
+            Bill_Info bill_infor = new Bill_Info();
+            bill_infor.Food = food.ID;
+            bill_infor.FoodCount = num;
+            bill_infor.Bill = bill.ID;
+            listBillInfo.Add(bill_infor);
+            Bill_InfoController.getController().createBill_Info(bill_infor);
             listFood.Add(food);
         }
 

@@ -10,27 +10,27 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Service
 {
-    class TableService : BaseService<Table, int>
+    class BillService : BaseService<Bill, int>
     {
         public long count()
         {
-            string query = "SELECT COUNT(*) as Count from dbo.TableIn";
+            string query = "SELECT COUNT(*) as Count from dbo.Bill";
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             return count;
         }
 
         public void delete(int id)
         {
-            string query = "DELETE FROM dbo.TableIn WHERE ID='" + id.ToString() + "'";
+            string query = "DELETE FROM dbo.Bill WHERE ID='" + id.ToString() + "'";
             int data = (int)DataProvider.getController().ExecuteNonQuery(query);
         }
 
-        public void delete(Table entity)
+        public void delete(Bill entity)
         {
             delete(entity.ID);
         }
 
-        public void delete(List<Table> listEntity)
+        public void delete(List<Bill> listEntity)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace CafeManager.Service
 
         public bool exists(int id)
         {
-            string query = "SELECT COUNT(*) as Count from dbo.TableIn t where t.ID = '" + id.ToString() + "'";
+            string query = "SELECT COUNT(*) as Count from dbo.Bill t where t.ID = '" + id.ToString() + "'";
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             if (count == 0) return false;
             return true;
@@ -50,7 +50,7 @@ namespace CafeManager.Service
 
         public DataTable findAll()
         {
-            string query = "SELECT * from dbo.TableIn";
+            string query = "SELECT * from dbo.Bill";
             return DataProvider.getController().ExecuteQuery(query);
         }
 
@@ -59,23 +59,23 @@ namespace CafeManager.Service
             throw new NotImplementedException();
         }
 
-        public Table findOne(int id)
+        public Bill findOne(int id)
         {
-            string query = "SELECT * from dbo.TableIn t where t.ID = '" + id.ToString() + "'" ;
-            List<Table> list = DataProvider.getController().ExecuteQuery(query).DataTableToList<Table>();
+            string query = "SELECT * from dbo.Bill t where t.ID = '" + id.ToString() + "'" ;
+            List<Bill> list = DataProvider.getController().ExecuteQuery(query).DataTableToList<Bill>();
             if (list == null) return null;
             if (list.Count == 0) return null;
             return list[0];
         }
 
-        public bool save(Table entity)
+        public bool save(Bill entity)
         {
-            string query = "INSERT INTO dbo.TableIn VALUES('" + entity.ID.ToString() + "'," + entity.TableName.ToStringSQL() + "," + entity.TableStatus.ToStringSQL() + "," + entity.IDBill.ToStringSQL() + ")";
+            string query = "INSERT INTO dbo.Bill VALUES('" + entity.Date_Check_In.ConvertDate() + "','" + entity.Date_Check_Out.ConvertDate() + "'," + entity.IDTable.ToStringSQL() + ","  +  entity.Discount.ToStringSQL() + "," + entity.Customer.ToStringSQL() + ")";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
 
-        public bool save(List<Table> listEntity)
+        public bool save(List<Bill> listEntity)
         {
             int count = 0;
             foreach(var item in listEntity)
@@ -85,16 +85,23 @@ namespace CafeManager.Service
             return count != 0;
         }
 
-        public bool update(Table entity)
+        public bool update(Bill entity)
         {
-            string query = "UPDATE dbo.TableIn SET TableName=" + entity.TableName.ToStringSQL() + ",TableStatus=" + entity.TableStatus.ToStringSQL()  + ",IDBill=" + entity.IDBill.ToStringSQL() + " WHERE ID='" + entity.ID.ToString() + "'";
+            string query = "UPDATE dbo.Bill SET Date_Check_In='" + entity.Date_Check_In.ConvertDate() + "',Date_Check_Out='" + entity.Date_Check_Out.ConvertDate() + "',IDTable=" + entity.IDTable.ToStringSQL() + ",Discount=" + entity.Discount.ToStringSQL() + ",Customer=" + entity.Customer.ToStringSQL() + " WHERE ID='" + entity.ID.ToString() + "'";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
 
-        public bool update(List<Table> listEntity)
+        public bool update(List<Bill> listEntity)
         {
             throw new NotImplementedException();
+        }
+
+        public int createNone()
+        {
+            string query = "INSERT INTO dbo.Bill OUTPUT Inserted.ID VALUES(null,null,null,null,null)";
+            int data = (int)DataProvider.getController().ExecuteScalar(query);
+            return data;
         }
     }
 }
