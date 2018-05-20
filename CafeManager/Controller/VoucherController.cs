@@ -29,6 +29,11 @@ namespace CafeManager.Controller
             Voucher v = voucherService.findOne(code);
             return v;
         }
+
+        public bool updateVoucher(Voucher voucher)
+        {
+            return voucherService.update(voucher);
+        }
     }
 
 }
