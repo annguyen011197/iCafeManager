@@ -34,36 +34,36 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.customPanel7 = new CafeManager.Custom_Control.CustomPanel();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.customPanel6 = new CafeManager.Custom_Control.CustomPanel();
+            this.dtpBirthDay = new CafeManager.GUI.Custom_Control.SexyDateTimePicker();
             this.customPanel3 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbDisplayName = new System.Windows.Forms.TextBox();
             this.customPanel2 = new CafeManager.Custom_Control.CustomPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.exitButton1 = new CafeManager.Custom_Control.ExitButton();
             this.header1 = new CafeManager.Header();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.formEclipse1 = new CafeManager.FormEclipse(this.components);
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.customPanel4 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.customPanel5 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.customPanel6 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.customPanel7 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.customPanel7.SuspendLayout();
+            this.customPanel6.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel4.SuspendLayout();
             this.customPanel5.SuspendLayout();
-            this.customPanel6.SuspendLayout();
-            this.customPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -107,7 +107,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(12, 523);
+            this.button1.Location = new System.Drawing.Point(426, 491);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 40);
             this.button1.TabIndex = 8;
@@ -115,11 +115,102 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CafeManager.Properties.Resources.Untitled;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(164, 236);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 24);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Họ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(164, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 24);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tên";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(164, 363);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 24);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Ngày Sinh";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(164, 427);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 24);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Loại:";
+            // 
+            // customPanel7
+            // 
+            this.customPanel7.BackColor = System.Drawing.Color.White;
+            this.customPanel7.Controls.Add(this.cbType);
+            this.customPanel7.ElipseRadius = 0;
+            this.customPanel7.Location = new System.Drawing.Point(296, 414);
+            this.customPanel7.Name = "customPanel7";
+            this.customPanel7.Size = new System.Drawing.Size(241, 46);
+            this.customPanel7.TabIndex = 17;
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(0, 16);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(241, 21);
+            this.cbType.TabIndex = 3;
+            // 
+            // customPanel6
+            // 
+            this.customPanel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.customPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel6.Controls.Add(this.dtpBirthDay);
+            this.customPanel6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.customPanel6.ElipseRadius = 0;
+            this.customPanel6.Location = new System.Drawing.Point(296, 354);
+            this.customPanel6.Name = "customPanel6";
+            this.customPanel6.Size = new System.Drawing.Size(241, 44);
+            this.customPanel6.TabIndex = 15;
+            // 
+            // dtpBirthDay
+            // 
+            this.dtpBirthDay.Location = new System.Drawing.Point(-1, 12);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.Size = new System.Drawing.Size(241, 20);
+            this.dtpBirthDay.TabIndex = 18;
+            this.dtpBirthDay.ValueChanged += new System.EventHandler(this.sexyDateTimePicker1_ValueChanged);
+            // 
             // customPanel3
             // 
             this.customPanel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.textBox3);
+            this.customPanel3.Controls.Add(this.tbDisplayName);
             this.customPanel3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.customPanel3.ElipseRadius = 0;
             this.customPanel3.Location = new System.Drawing.Point(296, 166);
@@ -127,13 +218,13 @@
             this.customPanel3.Size = new System.Drawing.Size(241, 44);
             this.customPanel3.TabIndex = 7;
             // 
-            // textBox3
+            // tbDisplayName
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(3, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(233, 13);
-            this.textBox3.TabIndex = 2;
+            this.tbDisplayName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbDisplayName.Location = new System.Drawing.Point(3, 19);
+            this.tbDisplayName.Name = "tbDisplayName";
+            this.tbDisplayName.Size = new System.Drawing.Size(233, 13);
+            this.tbDisplayName.TabIndex = 2;
             // 
             // customPanel2
             // 
@@ -200,143 +291,48 @@
             this.header1.TabIndex = 0;
             this.header1.TargetControl = null;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CafeManager.Properties.Resources.Untitled;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // formEclipse1
             // 
             this.formEclipse1.ElipseRadius = 100;
             this.formEclipse1.TargetControl = this.pictureBox1;
             // 
+            // tbLastName
+            // 
+            this.tbLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbLastName.Location = new System.Drawing.Point(0, 18);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(241, 13);
+            this.tbLastName.TabIndex = 18;
+            this.tbLastName.TextChanged += new System.EventHandler(this.tbLastName_TextChanged);
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbFirstName.Location = new System.Drawing.Point(0, 12);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(241, 13);
+            this.tbFirstName.TabIndex = 19;
+            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
+            // 
             // customPanel4
             // 
-            this.customPanel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.textBox4);
-            this.customPanel4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.Controls.Add(this.tbLastName);
             this.customPanel4.ElipseRadius = 0;
-            this.customPanel4.Location = new System.Drawing.Point(296, 227);
+            this.customPanel4.Location = new System.Drawing.Point(296, 226);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(241, 44);
-            this.customPanel4.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(3, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(233, 13);
-            this.textBox4.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(164, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 24);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Họ";
+            this.customPanel4.Size = new System.Drawing.Size(241, 48);
+            this.customPanel4.TabIndex = 20;
             // 
             // customPanel5
             // 
-            this.customPanel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel5.Controls.Add(this.textBox5);
-            this.customPanel5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.customPanel5.BackColor = System.Drawing.Color.White;
+            this.customPanel5.Controls.Add(this.tbFirstName);
             this.customPanel5.ElipseRadius = 0;
-            this.customPanel5.Location = new System.Drawing.Point(296, 290);
+            this.customPanel5.Location = new System.Drawing.Point(296, 287);
             this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(241, 44);
-            this.customPanel5.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(3, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(233, 13);
-            this.textBox5.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(164, 299);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 24);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Tên";
-            // 
-            // customPanel6
-            // 
-            this.customPanel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel6.Controls.Add(this.textBox6);
-            this.customPanel6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.customPanel6.ElipseRadius = 0;
-            this.customPanel6.Location = new System.Drawing.Point(296, 354);
-            this.customPanel6.Name = "customPanel6";
-            this.customPanel6.Size = new System.Drawing.Size(241, 44);
-            this.customPanel6.TabIndex = 15;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(3, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(233, 13);
-            this.textBox6.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(164, 363);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 24);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Ngày Sinh";
-            // 
-            // customPanel7
-            // 
-            this.customPanel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customPanel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel7.Controls.Add(this.textBox7);
-            this.customPanel7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.customPanel7.ElipseRadius = 0;
-            this.customPanel7.Location = new System.Drawing.Point(296, 418);
-            this.customPanel7.Name = "customPanel7";
-            this.customPanel7.Size = new System.Drawing.Size(241, 44);
-            this.customPanel7.TabIndex = 17;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(3, 19);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(233, 13);
-            this.textBox7.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(164, 427);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 24);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Ngày Sinh";
+            this.customPanel5.Size = new System.Drawing.Size(241, 47);
+            this.customPanel5.TabIndex = 21;
             // 
             // AddNew
             // 
@@ -344,14 +340,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(118)))), ((int)(((byte)(135)))));
-            this.ClientSize = new System.Drawing.Size(586, 575);
+            this.ClientSize = new System.Drawing.Size(586, 543);
+            this.Controls.Add(this.customPanel5);
+            this.Controls.Add(this.customPanel4);
             this.Controls.Add(this.customPanel7);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.customPanel6);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.customPanel5);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.customPanel4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -367,21 +363,19 @@
             this.Name = "AddNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNew";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.customPanel7.ResumeLayout(false);
+            this.customPanel6.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel4.ResumeLayout(false);
             this.customPanel4.PerformLayout();
             this.customPanel5.ResumeLayout(false);
             this.customPanel5.PerformLayout();
-            this.customPanel6.ResumeLayout(false);
-            this.customPanel6.PerformLayout();
-            this.customPanel7.ResumeLayout(false);
-            this.customPanel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,22 +392,22 @@
         private Custom_Control.CustomPanel customPanel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbDisplayName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FormEclipse formEclipse1;
-        private Custom_Control.CustomPanel customPanel4;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private Custom_Control.CustomPanel customPanel5;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
         private Custom_Control.CustomPanel customPanel6;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
-        private Custom_Control.CustomPanel customPanel7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label label7;
+        private Custom_Control.CustomPanel customPanel7;
+        private GUI.Custom_Control.SexyDateTimePicker dtpBirthDay;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private Custom_Control.CustomPanel customPanel4;
+        private Custom_Control.CustomPanel customPanel5;
     }
 }

@@ -87,7 +87,7 @@ namespace CafeManager.Service
 
         public bool update(Account entity)
         {
-            string query = "UPDATE dbo.Account SET Password='" + entity.Password + "',Display_Name=N'" + entity.Display_Name + "',Type='" + entity.Type.ToString() + "',Info" + entity.Info.ToString() + "' WHERE Username='" + entity.Username + "'";
+            string query = "UPDATE dbo.Account SET Password='" + entity.Password + "',Display_Name=N'" + entity.Display_Name + "',Type='" + entity.Type.ToString() + "',Info='" + entity.Info.ToString() + "' WHERE Username='" + entity.Username + "'";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

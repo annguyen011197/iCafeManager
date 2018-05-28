@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CafeManager.Utils;
+using System.Data;
+
 namespace CafeManager.Controller
 {
     class FoodController
@@ -29,6 +31,11 @@ namespace CafeManager.Controller
             return foodService.findAll().DataTableToList<Food>();
         }
 
+        public DataTable getListFoodType()
+        {
+            return foodService.getAllWithType();
+        }
+
         public List<Food> getListFoodCategory(int id)
         {
             List<Food> list = getListFood();
@@ -41,6 +48,32 @@ namespace CafeManager.Controller
                 }
             });
             return listResult;
+        }
+
+        public bool Exist(Food food)
+        {
+            return foodService.exists(food);
+        }
+
+        public Boolean Add(Food food)
+        {
+            return foodService.save(food);
+        }
+
+        public Boolean Update(Food food)
+        {
+            return foodService.update(food); 
+        }
+
+        public void Remove(Food food)
+        {
+            foodService.delete(food);
+            //throw new NotImplementedException();
+        }
+
+        public DataTable getListFoodType(string text)
+        {
+            return foodService.getAllWithType(text);
         }
 
         public Food findFood(int id)

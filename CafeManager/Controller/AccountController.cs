@@ -45,5 +45,22 @@ namespace CafeManager.Controller
         {
             return accountService.findAll().DataTableToList<Account>();
         }
+
+        public bool exits(Account account)
+        {
+            return accountService.exists(account.Username);
+        }
+
+        public bool update(Account account)
+        {
+            return accountService.update(account);
+        }
+
+        public void Delete(Account account)
+        {
+            Account_TypeController.getController().Delete(account.Info);
+            accountService.delete(account);
+            //throw new NotImplementedException();
+        }
     }
 }

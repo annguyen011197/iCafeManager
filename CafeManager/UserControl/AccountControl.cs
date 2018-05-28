@@ -15,7 +15,7 @@ namespace CafeManager
     {
         private Account account;
         private List<Color> listColor = new List<Color>();
-
+        public Boolean Checked { get; set; }
         public delegate void onClickAccount(AccountControl tb);
 
         public onClickAccount onClick;
@@ -31,6 +31,7 @@ namespace CafeManager
             listColor.Add(Color.FromArgb(241, 196, 15));
             listColor.Add(Color.FromArgb(231, 76, 60));
             listColor.Add(Color.FromArgb(230, 126, 34));
+            Checked = false;
         }
 
         private ToolTip createToolTip()
@@ -62,10 +63,12 @@ namespace CafeManager
 
         public void check(){
             BackColor = "#bdc3c7".ToColor();
+            Checked = true;
         }
         public void unCheck()
         {
             BackColor = account.Color.ToColor();
+            Checked = false;
         }
 
         private void label1_Click(object sender, EventArgs e)

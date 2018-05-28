@@ -1,5 +1,7 @@
 ﻿using CafeManager.Controller;
+using CafeManager.GUI.ManagerForm;
 using CafeManager.Model;
+using CafeManager.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,9 +49,33 @@ namespace CafeManager.ManagerForm
         {
             //la.Text = tb.Table.Name;
             Account account = tb.Account;
-            Tuple<Account_Info,Account_Type> info =  Account_InfoController.getController().findOneWithType(account.Username);
+            UpdateClickItem(account);
+
             unCheckTable();
             tb.check();
+        }
+
+        void UpdateClickItem(Account account)
+        {
+            Tuple<Account_Info, Account_Type> info = Account_InfoController.getController().findOneWithType(account.Username);
+            if (info != null)
+            {
+                lbName.Text = info.Item1.First_Name + " " + info.Item1.Last_Name;
+                lbBirthay.Text = HelperUtils.ConvertDateTime(info.Item1.Birthday.ToString());
+                lbPhone.Text = info.Item1.Phone;
+                lbType.Text = info.Item2.Name;
+                rtbAdress.Text = info.Item1.Address;
+                rtbNote.Text = info.Item1.Note;
+            }
+            else
+            {
+                lbName.Text = "";
+                lbBirthay.Text = "";
+                lbPhone.Text = "";
+                lbType.Text = "";
+                rtbAdress.Text = "";
+                rtbNote.Text = "";
+            }
         }
 
 
@@ -72,6 +98,7 @@ namespace CafeManager.ManagerForm
         private void button1_Click(object sender, EventArgs e)
         {
             new AddNew().ShowDialog();
+            updateData();
         }
 
         private void textBox7_KeyUp(object sender, KeyEventArgs e)
@@ -102,6 +129,41 @@ namespace CafeManager.ManagerForm
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listControl.ForEach(item =>
+            {
+                if (item.Checked)
+                {
+                    var account = item.Account;
+                    new Edit(account).ShowDialog();
+                    UpdateClickItem(account);
+                    return;
+                }
+            });
+            updateData();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new AddAccType().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listControl.ForEach(item =>
+            {
+                if (item.Checked)
+                {
+                    var account = item.Account;
+                    AccountController.getController().Delete(account);
+                    UpdateClickItem(account);
+
+                }
+            });
+            updateData();
         }
     }
 }

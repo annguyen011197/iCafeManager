@@ -35,9 +35,29 @@ namespace CafeManager.Service
             throw new NotImplementedException();
         }
 
+        public  DataTable getAllWithType()
+        {
+            string query = @"
+                select f.ID, f.FoodName, f.Price, c.CategoryName, c.ID as CategoryID
+                from dbo.Food f, dbo.Category c
+                where f.Category = c.ID";
+
+            return DataProvider.getController().ExecuteQuery(query);
+        }
+
         public void deleteAll()
         {
             throw new NotImplementedException();
+        }
+
+        internal Boolean exists(Food food)
+        {
+            String query = String.Format(@"select * from dbo.Food f
+                where f.FoodName='{0}' and f.Category ={1}",food.FoodName,food.Category);
+            var count = DataProvider.getController().ExecuteScalar(query);
+            if (count == null) return true;
+            else return (int)count == 0;
+            //return count == 0;
         }
 
         public bool exists(int id)
@@ -46,6 +66,16 @@ namespace CafeManager.Service
             int count = (int)DataProvider.getController().ExecuteScalar(query);
             if (count == 0) return false;
             return true;
+        }
+
+        internal DataTable getAllWithType(string text)
+        {
+            string query = String.Format(@"
+                select f.ID, f.FoodName, f.Price, c.CategoryName, c.ID as CategoryID
+                from dbo.Food f, dbo.Category c
+                where f.Category = c.ID and c.CategoryName like N'%{0}%'",text);
+
+            return DataProvider.getController().ExecuteQuery(query);
         }
 
         public DataTable findAll()
@@ -70,7 +100,8 @@ namespace CafeManager.Service
 
         public bool save(Food entity)
         {
-            string query = "INSERT INTO dbo.Food VALUES('" + entity.ID.ToString() + "','" + entity.FoodName + "','" + entity.Price.ToString() + "','" + entity.Category.ToString() + "')";
+            string query = String.Format("insert into Food (FoodName, Price, Category) values ('{0}', {1},{2})",
+                entity.FoodName,entity.Price, entity.Category);
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

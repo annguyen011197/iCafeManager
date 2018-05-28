@@ -1,5 +1,6 @@
 ﻿using CafeManager.Controller;
 using CafeManager.GUI;
+using CafeManager.GUI.ManagerForm;
 using CafeManager.ManagerForm;
 using CafeManager.Model;
 using System;
@@ -25,7 +26,7 @@ namespace CafeManager
         private bool _canUpdate = false;
 
         private int Discount = 0;
-        
+
 
         public HomeV2()
         {
@@ -61,7 +62,7 @@ namespace CafeManager
             tb.check();
             updateListChoose();
         }
-        
+
 
         void unCheckTable()
         {
@@ -71,7 +72,7 @@ namespace CafeManager
             });
         }
 
-      
+
 
         private void updateCategory()
         {
@@ -85,7 +86,7 @@ namespace CafeManager
 
         private void updateFood(int id)
         {
-            if(id == -1)
+            if (id == -1)
             {
                 listFoodCategory = FoodController.getController().getListFood();
             }
@@ -107,7 +108,7 @@ namespace CafeManager
 
         private void updateListChoose()
         {
-            if(chooseTable != null)
+            if (chooseTable != null)
             {
                 int sum = 0;
                 listView3.Items.Clear();
@@ -215,7 +216,7 @@ namespace CafeManager
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listView2.SelectedItems.Count > 0)
+            if (listView2.SelectedItems.Count > 0)
             {
                 int id = listView2.Items.IndexOf(listView2.SelectedItems[0]);
                 updateFood(listFood[id].Category);
@@ -260,7 +261,7 @@ namespace CafeManager
 
         private void flowLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
         {
-            if(sender is TableControl)
+            if (sender is TableControl)
             {
 
             }
@@ -275,7 +276,7 @@ namespace CafeManager
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
 
-           if(listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count > 0)
             {
                 int id = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                 if (chooseTable != null && chooseTable.Table.TableStatus == true)
@@ -295,7 +296,7 @@ namespace CafeManager
                     MessageBox.Show("Chưa chọn hoặc bàn còn trống!");
                 }
             }
-            
+
         }
 
         private void listView3_DoubleClick(object sender, EventArgs e)
@@ -320,7 +321,7 @@ namespace CafeManager
             {
                 string voucher = textBox3.Text;
                 string IDKH = textBox2.Text;
-                if(IDKH == "")
+                if (IDKH == "")
                 {
                     chooseTable.endBill(-1);
                 }
@@ -328,7 +329,7 @@ namespace CafeManager
                 {
                     chooseTable.endBill(int.Parse(IDKH));
                 }
-                if(voucher != "")
+                if (voucher != "")
                 {
                     Voucher v = VoucherController.getController().checkExist(voucher);
                     if (v != null && v.Status != true)
@@ -353,9 +354,8 @@ namespace CafeManager
                 Discount = 0;
                 textBox5.Text = "0";
             }
-                
-        }
 
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             string voucher = textBox3.Text;
@@ -372,7 +372,12 @@ namespace CafeManager
                     MessageBox.Show("Đã sử dụng hoặc không tồn tại!");
                 }
             }
-            
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new AddNewCustomer().ShowDialog();
         }
     }
 }
