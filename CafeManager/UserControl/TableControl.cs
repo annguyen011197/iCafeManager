@@ -111,7 +111,7 @@ namespace CafeManager
             bill.Date_Check_In = DateTime.Now;
             bill.IDTable = table.ID;
             bill.Discount = 0;
-            bill.Customer = -1;
+            bill.Customer = "";
             table.IDBill = bill.ID;
             this.Table.TableStatus = true;
             check();
@@ -120,7 +120,7 @@ namespace CafeManager
             BillController.getController().updateBill(bill);
         }
 
-        public void endBill(int custom)
+        public void endBill(String custom)
         {
             bill.Date_Check_Out = DateTime.Now;
             bill.Customer = custom;

@@ -53,5 +53,11 @@ namespace CafeManager.Controller
         {
             accountService.delete(customer);
         }
+
+        public bool checkExist(string IDNumber)
+        {
+            if (IDNumber == "") return false;
+            return accountService.exists(IDNumber);
+        }
     }
 }

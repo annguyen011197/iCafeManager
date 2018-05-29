@@ -19,6 +19,10 @@ namespace CafeManager.Utils
 
         public static string ToStringSQL(this string values)
         {
+            if (values == "")
+            {
+                return "null";
+            }
             return "N'" + values + "'";
         }
 

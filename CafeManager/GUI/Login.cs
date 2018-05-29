@@ -46,10 +46,10 @@ namespace CafeManager
             {
                 MessageBox.Show("tài khoản và mật khẩu không được bỏ trống");
             }
-            Account account = AccountController.getController().checkAccount(username, password);
+            Account account = AccountController.getController().checkAccount(userName, passWord);
             if (account != null)
             {
-                if (account.Type == 1 || account.Type == 2)
+                if (account.Type == 2)
                 {
                     this.Hide();
                     new Manager().Show();

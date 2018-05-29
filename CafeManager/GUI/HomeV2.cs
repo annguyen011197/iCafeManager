@@ -142,6 +142,7 @@ namespace CafeManager
                     tb.Parent = flowLayoutPanel1;
                     flowLayoutPanel1.Controls.Add(tb);
                     tb.onClick = new onClickTable(onClickTableEvent);
+                    tb.ContextMenuStrip = menuTable;
                     listTable.Add(tb);
                 });
             }
@@ -162,6 +163,7 @@ namespace CafeManager
             this.btnExit.BackgroundImage = Properties.Resources.exit;
         }
 
+        //Mở bàn
         private void button1_Click(object sender, EventArgs e)
         {
             if (chooseTable != null && chooseTable.Table.TableStatus == false)
@@ -321,14 +323,15 @@ namespace CafeManager
             {
                 string voucher = textBox3.Text;
                 string IDKH = textBox2.Text;
-                if (IDKH == "")
+                if (CustomerController.getController().checkExist(IDKH))
                 {
-                    chooseTable.endBill(-1);
+                    chooseTable.endBill(IDKH);
                 }
                 else
                 {
-                    chooseTable.endBill(int.Parse(IDKH));
+                    chooseTable.endBill("");
                 }
+               
                 if (voucher != "")
                 {
                     Voucher v = VoucherController.getController().checkExist(voucher);
@@ -353,6 +356,8 @@ namespace CafeManager
                 chooseTable.clearTable();
                 Discount = 0;
                 textBox5.Text = "0";
+                textBox2.Text =  "";
+                textBox3.Text = "";
             }
 
         }
@@ -378,6 +383,91 @@ namespace CafeManager
         private void button8_Click(object sender, EventArgs e)
         {
             new AddNewCustomer().ShowDialog();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (chooseTable != null)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+
+        private void menuTable_Opening(object sender, CancelEventArgs e)
+        {
+            ContextMenuStrip menu = sender as ContextMenuStrip;
+            TableControl tableControl = menu.SourceControl as TableControl;
+            if (tableControl != null)
+            {
+                if (!tableControl.Table.TableStatus)
+                {
+                    menuTable.Items[0].Enabled = true;
+                    menuTable.Items[1].Enabled = false;
+                }
+                else
+                {
+                    menuTable.Items[0].Enabled = false;
+                    menuTable.Items[1].Enabled = true;
+                }
+                chooseTable = tableControl;
+                unCheckTable();
+                tableControl.check();
+                updateListChoose();
+            }
+        }
+
+        private void billToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (chooseTable != null)
+            {
+                button3_Click(sender, e);
+            }
+        }
+
+        private void thêmNhanhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1 != null && listView1.SelectedItems.Count > 0)
+            {
+                int id = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                if (chooseTable != null && chooseTable.Table.TableStatus == true)
+                {
+                    chooseTable.addFood(listFoodCategory[id], 1);
+                    updateListChoose();
+                }
+                else
+                {
+                    MessageBox.Show("Chưa chọn hoặc bàn còn trống!");
+                }
+            }
+        }
+
+        private void thêmTùyChỉnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1_DoubleClick(sender, e);
+        }
+
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView3_DoubleClick(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string IDNumber = textBox2.Text;
+            if (IDNumber != "")
+            {
+                bool v = CustomerController.getController().checkExist(IDNumber);
+                if (v)
+                {
+                    MessageBox.Show("IDNumber có thể sử dụng");
+                }
+                else
+                {
+                    MessageBox.Show("IDNumber không tồn tại!");
+                }
+            }
         }
     }
 }

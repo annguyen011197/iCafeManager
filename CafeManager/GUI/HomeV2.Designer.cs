@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeV2));
             this.btnExit = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.menuTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mởBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFood = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmNhanhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmTùyChỉnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,6 +46,8 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.nonFlickerSplitContainer2 = new CafeManager.NonFlickerSplitContainer();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.removeFood = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +73,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.header1 = new CafeManager.Header();
-            this.button8 = new System.Windows.Forms.Button();
+            this.menuTable.SuspendLayout();
+            this.addFood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).BeginInit();
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
@@ -73,6 +84,7 @@
             this.nonFlickerSplitContainer2.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer2.Panel2.SuspendLayout();
             this.nonFlickerSplitContainer2.SuspendLayout();
+            this.removeFood.SuspendLayout();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer3)).BeginInit();
             this.nonFlickerSplitContainer3.Panel1.SuspendLayout();
@@ -99,6 +111,66 @@
             this.btnExit.Click += new System.EventHandler(this.btnExitClick);
             this.btnExit.MouseLeave += new System.EventHandler(this.btnExitLeave);
             this.btnExit.MouseHover += new System.EventHandler(this.btnExitHover);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Turquoise;
+            this.button8.BackgroundImage = global::CafeManager.Properties.Resources.add;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(0, -1);
+            this.button8.Name = "button8";
+            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button8.Size = new System.Drawing.Size(47, 35);
+            this.button8.TabIndex = 3;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // menuTable
+            // 
+            this.menuTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mởBànToolStripMenuItem,
+            this.hóaĐơnToolStripMenuItem});
+            this.menuTable.Name = "menuTable";
+            this.menuTable.Size = new System.Drawing.Size(121, 48);
+            this.menuTable.Opening += new System.ComponentModel.CancelEventHandler(this.menuTable_Opening);
+            // 
+            // mởBànToolStripMenuItem
+            // 
+            this.mởBànToolStripMenuItem.Name = "mởBànToolStripMenuItem";
+            this.mởBànToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.mởBànToolStripMenuItem.Text = "Mở bàn";
+            this.mởBànToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // hóaĐơnToolStripMenuItem
+            // 
+            this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
+            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
+            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.billToolStripMenuItem_Click);
+            // 
+            // addFood
+            // 
+            this.addFood.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmNhanhToolStripMenuItem,
+            this.thêmTùyChỉnhToolStripMenuItem});
+            this.addFood.Name = "addFood";
+            this.addFood.Size = new System.Drawing.Size(159, 48);
+            // 
+            // thêmNhanhToolStripMenuItem
+            // 
+            this.thêmNhanhToolStripMenuItem.Name = "thêmNhanhToolStripMenuItem";
+            this.thêmNhanhToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.thêmNhanhToolStripMenuItem.Text = "Thêm nhanh";
+            this.thêmNhanhToolStripMenuItem.Click += new System.EventHandler(this.thêmNhanhToolStripMenuItem_Click);
+            // 
+            // thêmTùyChỉnhToolStripMenuItem
+            // 
+            this.thêmTùyChỉnhToolStripMenuItem.Name = "thêmTùyChỉnhToolStripMenuItem";
+            this.thêmTùyChỉnhToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.thêmTùyChỉnhToolStripMenuItem.Text = "Thêm tùy chỉnh";
+            this.thêmTùyChỉnhToolStripMenuItem.Click += new System.EventHandler(this.thêmTùyChỉnhToolStripMenuItem_Click);
             // 
             // nonFlickerSplitContainer1
             // 
@@ -225,6 +297,7 @@
             this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView3.ContextMenuStrip = this.removeFood;
             this.listView3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
             this.listView3.Location = new System.Drawing.Point(0, 156);
             this.listView3.Name = "listView3";
@@ -232,6 +305,20 @@
             this.listView3.TabIndex = 8;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.DoubleClick += new System.EventHandler(this.listView3_DoubleClick);
+            // 
+            // removeFood
+            // 
+            this.removeFood.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaToolStripMenuItem});
+            this.removeFood.Name = "removeFood";
+            this.removeFood.Size = new System.Drawing.Size(95, 26);
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // customPanel1
             // 
@@ -393,6 +480,7 @@
             this.button4.Size = new System.Drawing.Size(23, 23);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox3
             // 
@@ -560,6 +648,7 @@
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.ContextMenuStrip = this.addFood;
             this.listView1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -582,21 +671,6 @@
             this.header1.TabIndex = 0;
             this.header1.TargetControl = null;
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Turquoise;
-            this.button8.BackgroundImage = global::CafeManager.Properties.Resources.add;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(0, -1);
-            this.button8.Name = "button8";
-            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button8.Size = new System.Drawing.Size(47, 35);
-            this.button8.TabIndex = 3;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // HomeV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +685,8 @@
             this.Name = "HomeV2";
             this.Text = "HomeV2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuTable.ResumeLayout(false);
+            this.addFood.ResumeLayout(false);
             this.nonFlickerSplitContainer1.Panel1.ResumeLayout(false);
             this.nonFlickerSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).EndInit();
@@ -621,6 +697,7 @@
             this.nonFlickerSplitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer2)).EndInit();
             this.nonFlickerSplitContainer2.ResumeLayout(false);
+            this.removeFood.ResumeLayout(false);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.nonFlickerSplitContainer3.Panel1.ResumeLayout(false);
@@ -669,5 +746,13 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ContextMenuStrip menuTable;
+        private System.Windows.Forms.ToolStripMenuItem mởBànToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip addFood;
+        private System.Windows.Forms.ToolStripMenuItem thêmNhanhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thêmTùyChỉnhToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip removeFood;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
     }
 }

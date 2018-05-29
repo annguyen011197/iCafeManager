@@ -1,5 +1,6 @@
 ﻿using CafeManager.Controller;
 using CafeManager.Model;
+using CafeManager.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,23 +10,23 @@ using System.Threading.Tasks;
 
 namespace CafeManager.Service
 {
-    class CustomerService : BaseService<Customer, int>
+    class CustomerService : BaseService<Customer, String>
     {
         public long count()
         {
             throw new NotImplementedException();
         }
 
-        public void delete(int id)
+        public void delete(String id)
         {
-            String query = @"delete from dbo.Customer where ID = "+id;
+            String query = @"delete from dbo.Customer where IDNumber = " + id;
             DataProvider.getController().ExecuteNonQuery(query);
         }
 
         public void delete(Customer entity)
         {
             // String query = @"select * from dbo.Customer";
-            delete(entity.ID);
+            delete(entity.IDNumber);
         }
 
         public void delete(List<Customer> listEntity)
@@ -38,9 +39,12 @@ namespace CafeManager.Service
             throw new NotImplementedException();
         }
 
-        public bool exists(int id)
+        public bool exists(String id)
         {
-            throw new NotImplementedException();
+            string query = "SELECT COUNT(*) as Count from dbo.Customer t where t.IDNumber = " + id.ToStringSQL();
+            int count = (int)DataProvider.getController().ExecuteScalar(query);
+            if (count == 0) return false;
+            return true;
         }
 
         public DataTable findAll()
@@ -50,12 +54,12 @@ namespace CafeManager.Service
             //throw new NotImplementedException();
         }
 
-        public DataTable findAll(List<int> listId)
+        public DataTable findAll(List<String> listId)
         {
             throw new NotImplementedException();
         }
 
-        public Customer findOne(int id)
+        public Customer findOne(String String)
         {
             throw new NotImplementedException();
         }
@@ -92,5 +96,6 @@ where IDNumber={4}",
         {
             throw new NotImplementedException();
         }
+
     }
 }
