@@ -96,5 +96,11 @@ namespace CafeManager.Service
         {
             throw new NotImplementedException();
         }
+
+        public DataTable findSelect(String select)
+        {
+            string query = "SELECT * from dbo.Voucher WHERE Code LIKE '%" + select + "%'";
+            return DataProvider.getController().ExecuteQuery(query);
+        }
     }
 }

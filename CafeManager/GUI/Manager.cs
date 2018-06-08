@@ -54,5 +54,15 @@ namespace CafeManager
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            VoucherForm form = VoucherForm.Instance;
+            form.TopLevel = false;
+            this.contentPanel.Controls.Clear();
+            this.contentPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }

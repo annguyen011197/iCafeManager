@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CafeManager.Utils;
+using System.Data;
+
 namespace CafeManager.Controller
 {
     class VoucherController
@@ -34,6 +36,31 @@ namespace CafeManager.Controller
         {
             return voucherService.update(voucher);
         }
+
+        public DataTable getList(String select)
+        {
+            if(select == "")
+            {
+                return voucherService.findAll();
+            }
+            return voucherService.findSelect(select);
+        }
+
+        public bool Update(Voucher v)
+        {
+            return voucherService.update(v);
+        }
+
+        public void Delete(string id)
+        {
+            voucherService.delete(id);
+        }
+
+        public bool Save(Voucher v)
+        {
+            return voucherService.save(v);
+        }
+
     }
 
 }

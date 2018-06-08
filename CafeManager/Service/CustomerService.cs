@@ -66,7 +66,7 @@ namespace CafeManager.Service
 
         public bool save(Customer entity)
         {
-            String query = String.Format(@"insert into Customer (CustomerName, Phone, CustomerAddress, Note, IDNumber) values ('{0}', '{1}', '{2}', '{3}','{4}')",
+            String query = String.Format(@"insert into Customer (CustomerName, Phone, CustomerAddress, Note, IDNumber) values (N'{0}', '{1}', N'{2}', '{3}','{4}')",
                 entity.CustomerName,
                 entity.Phone,
                 entity.CustomerAddress,

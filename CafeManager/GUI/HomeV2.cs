@@ -334,11 +334,15 @@ namespace CafeManager
                
                 if (voucher != "")
                 {
-                    Voucher v = VoucherController.getController().checkExist(voucher);
-                    if (v != null && v.Status != true)
-                    {
-                        chooseTable.addVoucher(v);
+                    String[] listVoucher = voucher.Trim().Split(',');
+                    foreach(var item in listVoucher){
+                        Voucher v = VoucherController.getController().checkExist(item);
+                        if (v != null && v.Status != true)
+                        {
+                            chooseTable.addVoucher(v);
+                        }
                     }
+                   
                 }
                 chooseTable.makeBill();
                 List<BillReport> list = new List<BillReport>();

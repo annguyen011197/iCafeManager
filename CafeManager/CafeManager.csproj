@@ -177,6 +177,18 @@
     <Compile Include="GUI\ManagerForm\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManagerForm\AddVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\AddVoucher.Designer.cs">
+      <DependentUpon>AddVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditVoucher.Designer.cs">
+      <DependentUpon>EditVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManagerForm\EditItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +212,12 @@
     </Compile>
     <Compile Include="GUI\ManagerForm\Items.Designer.cs">
       <DependentUpon>Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\VoucherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\VoucherForm.Designer.cs">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManagerForm\Staff.cs">
       <SubType>Form</SubType>
@@ -308,6 +326,12 @@
     <EmbeddedResource Include="GUI\ManagerForm\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\AddVoucher.resx">
+      <DependentUpon>AddVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\EditVoucher.resx">
+      <DependentUpon>EditVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\EditItems.resx">
       <DependentUpon>EditItems.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\VoucherForm.resx">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
