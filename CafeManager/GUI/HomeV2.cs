@@ -24,6 +24,8 @@ namespace CafeManager
         private List<Category> listCategory = new List<Category>();
         private TableControl chooseTable = null;
         private bool _canUpdate = false;
+
+        private int Discount = 0;
         
 
         public HomeV2()
@@ -69,6 +71,8 @@ namespace CafeManager
                 item.unCheck();
             });
         }
+
+      
 
         private void updateCategory()
         {
@@ -121,6 +125,8 @@ namespace CafeManager
                 });
 
                 textBox4.Text = sum.ToString();
+                textBox6.Text = Discount.ToString();
+                textBox7.Text = ((int)(sum - (sum * Discount / 100.0))).ToString();
             }
         }
 
@@ -325,9 +331,10 @@ namespace CafeManager
                 }
                 if(voucher != "")
                 {
-                    if(VoucherController.getController().checkExist(voucher) != null)
+                    Voucher v = VoucherController.getController().checkExist(voucher);
+                    if (v != null && v.Status != true)
                     {
-                        chooseTable.addVoucher(voucher);
+                        chooseTable.addVoucher(v);
                     }
                 }
                 chooseTable.makeBill();
@@ -344,8 +351,29 @@ namespace CafeManager
                 });
                 new ReportView(list, chooseTable.bill).ShowDialog(this);
                 chooseTable.clearTable();
+                Discount = 0;
+                textBox5.Text = "0";
             }
                 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string voucher = textBox3.Text;
+            if (voucher != "")
+            {
+                Voucher v = VoucherController.getController().checkExist(voucher);
+                if (v != null && v.Status != true)
+                {
+                    Discount = v.VCValue;
+                    updateListChoose();
+                }
+                else
+                {
+                    MessageBox.Show("Đã sử dụng hoặc không tồn tại!");
+                }
+            }
+            
         }
 
         private void button8_Click(object sender, EventArgs e)

@@ -70,7 +70,7 @@ namespace CafeManager.Service
 
         public bool save(Voucher entity)
         {
-            string query = "INSERT INTO dbo.Voucher VALUES('"+ entity.Expired.ConvertDate() + "','" + entity.VCValue.ToString() + "','" + entity.Type.ToString() + "','" +  entity.Code +"')";
+            string query = "INSERT INTO dbo.Voucher VALUES('"+ entity.Expired.ConvertDate() + "'," + entity.VCValue.ToStringSQL() + "," + entity.Type.ToStringSQL() + "," +  entity.Code.ToStringSQL() + "," + entity.Status.ToStringSQL() + ")";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }
@@ -87,7 +87,7 @@ namespace CafeManager.Service
 
         public bool update(Voucher entity)
         {
-            string query = "UPDATE dbo.Voucher SET Expired='" + entity.Expired.ConvertDate() + "',VCValue='" + entity.VCValue.ToString() + "',Type='" + entity.Type.ToString() + "' WHERE Code='" + entity.Code + "'";
+            string query = "UPDATE dbo.Voucher SET Expired='" + entity.Expired.ConvertDate() + "',VCValue=" + entity.VCValue.ToStringSQL() + ",Type=" + entity.Type.ToStringSQL()  + ",Status=" + entity.Status.ToStringSQL() + " WHERE Code='" + entity.Code + "'";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

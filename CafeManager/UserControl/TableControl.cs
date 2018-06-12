@@ -126,12 +126,15 @@ namespace CafeManager
             bill.Customer = custom;
         }
 
-        public void addVoucher(string voucher)
+        public void addVoucher(Voucher voucher)
         {
             Bill_Voucher bill_Voucher = new Bill_Voucher();
-            bill_Voucher.ID_Voucher = voucher;
+            bill_Voucher.ID_Voucher = voucher.Code;
             bill_Voucher.ID_Bill = bill.ID;
             this.listVoucher.Add(bill_Voucher);
+            bill.Discount += voucher.VCValue;
+            voucher.Status = true;
+            VoucherController.getController().updateVoucher(voucher);
         }
 
         public void removeFood(int id)
