@@ -18,7 +18,8 @@ namespace CafeManager.Controller
             return instance;
         }
 
-        private string connectionString = @"Data Source=DESKTOP-G0VEMF3;Initial Catalog=iCafe;Integrated Security=True;";
+        //private string connectionString = @"Data Source=DESKTOP-G0VEMF3;Initial Catalog=iCafe;Integrated Security=True;";
+        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["iCafe"].ConnectionString;
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

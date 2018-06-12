@@ -79,11 +79,15 @@ namespace CafeManager
             if(table.TableStatus == true)
             {
                 bill =  BillController.getController().findBill(table.IDBill);
-                listBillInfo = Bill_InfoController.getController().getListFromBill(bill.ID);
-                listBillInfo.ForEach(item =>
+                if (bill != null)
                 {
-                    listFood.Add(FoodController.getController().findFood(item.Food));
-                });
+                    listBillInfo = Bill_InfoController.getController().getListFromBill(bill.ID);
+                    listBillInfo.ForEach(item =>
+                    {
+                        listFood.Add(FoodController.getController().findFood(item.Food));
+                    });
+                }
+
             }
         }
 
