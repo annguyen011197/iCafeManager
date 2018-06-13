@@ -18,6 +18,8 @@ namespace CafeManager.GUI.ManagerForm
         public Items()
         {
             InitializeComponent();
+            textBox1.GotFocus += new EventHandler(RemoveText);
+            textBox1.LostFocus += new EventHandler(AddText);
             updateData();
             check = true;
         }
@@ -78,6 +80,7 @@ namespace CafeManager.GUI.ManagerForm
         private void button6_Click(object sender, EventArgs e)
         {
             new AddFoodType().ShowDialog();
+            updateData();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -111,6 +114,16 @@ namespace CafeManager.GUI.ManagerForm
                 String text = textBox1.Text;
                 dgvItems.DataSource = FoodController.getController().getListFoodType(text);
             }
+        }
+
+        protected void RemoveText(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        protected void AddText(object sender, EventArgs e)
+        {
+            textBox1.Text = "Loại";
         }
 
     }

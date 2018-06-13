@@ -70,7 +70,9 @@ namespace CafeManager.Service
 
         public bool save(Table entity)
         {
-            string query = "INSERT INTO dbo.TableIn VALUES('" + entity.ID.ToString() + "'," + entity.TableName.ToStringSQL() + "," + entity.TableStatus.ToStringSQL() + "," + entity.IDBill.ToStringSQL() + ")";
+            string query = String.Format(
+                @"  insert into dbo.TableIn(TableName,TableStatus) values(N'{0}',0)",
+                entity.TableName);
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

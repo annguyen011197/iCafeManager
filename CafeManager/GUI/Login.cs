@@ -49,15 +49,17 @@ namespace CafeManager
             Account account = AccountController.getController().checkAccount(userName, passWord);
             if (account != null)
             {
-                if (account.Type == 1 || account.Type == 2)
+                if (account.Type == 1)
                 {
                     this.Hide();
-                    new Manager().Show();
+                    new HomeV2().ShowDialog();
+                    this.Show();
                 }
                 else
                 {
                     this.Hide();
-                    new HomeV2().Show();
+                    new Manager().ShowDialog();
+                    this.Show();
                 }
             }
             else
@@ -71,6 +73,14 @@ namespace CafeManager
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2_Click(this, e);
+            }
         }
     }
 }

@@ -21,7 +21,8 @@ namespace CafeManager
 
         private void btnExitClick(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +49,36 @@ namespace CafeManager
         private void button2_Click(object sender, EventArgs e)
         {
             CustomerForm form = CustomerForm.Instance;
+            form.TopLevel = false;
+            this.contentPanel.Controls.Clear();
+            this.contentPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            VoucherForm form = VoucherForm.Instance;
+            form.TopLevel = false;
+            this.contentPanel.Controls.Clear();
+            this.contentPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Statistics form = Statistics.Instance;
+            form.TopLevel = false;
+            this.contentPanel.Controls.Clear();
+            this.contentPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TableForm form = TableForm.Instance;
             form.TopLevel = false;
             this.contentPanel.Controls.Clear();
             this.contentPanel.Controls.Add(form);

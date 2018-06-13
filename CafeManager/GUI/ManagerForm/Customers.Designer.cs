@@ -30,6 +30,8 @@
         {
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
             this.dgvCus = new System.Windows.Forms.DataGridView();
+            this.prevButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             this.customPanel1 = new CafeManager.Custom_Control.CustomPanel();
             this.lbFullName = new System.Windows.Forms.Label();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
@@ -43,11 +45,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel7 = new CafeManager.Custom_Control.CustomPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.customPanel2 = new CafeManager.Custom_Control.CustomPanel();
+            this.offsetBox = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).BeginInit();
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
@@ -55,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCus)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel7.SuspendLayout();
+            this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nonFlickerSplitContainer1
@@ -70,6 +76,9 @@
             // nonFlickerSplitContainer1.Panel2
             // 
             this.nonFlickerSplitContainer1.Panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.customPanel2);
+            this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.prevButton);
+            this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.nextButton);
             this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.customPanel1);
             this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.customPanel7);
             this.nonFlickerSplitContainer1.Panel2.Controls.Add(this.label1);
@@ -91,6 +100,35 @@
             this.dgvCus.Size = new System.Drawing.Size(359, 444);
             this.dgvCus.TabIndex = 0;
             this.dgvCus.SelectionChanged += new System.EventHandler(this.selection_change);
+            // 
+            // prevButton
+            // 
+            this.prevButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.prevButton.BackgroundImage = global::CafeManager.Properties.Resources.prev;
+            this.prevButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.prevButton.FlatAppearance.BorderSize = 0;
+            this.prevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prevButton.Location = new System.Drawing.Point(3, 403);
+            this.prevButton.Name = "prevButton";
+            this.prevButton.Size = new System.Drawing.Size(44, 44);
+            this.prevButton.TabIndex = 24;
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
+            // 
+            // nextButton
+            // 
+            this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nextButton.BackColor = System.Drawing.Color.Transparent;
+            this.nextButton.BackgroundImage = global::CafeManager.Properties.Resources.next;
+            this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nextButton.FlatAppearance.BorderSize = 0;
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton.Location = new System.Drawing.Point(121, 405);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(44, 44);
+            this.nextButton.TabIndex = 23;
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // customPanel1
             // 
@@ -215,7 +253,7 @@
             this.customPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.customPanel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel7.Controls.Add(this.textBox7);
+            this.customPanel7.Controls.Add(this.tbFind);
             this.customPanel7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.customPanel7.ElipseRadius = 0;
             this.customPanel7.Location = new System.Drawing.Point(209, 130);
@@ -223,14 +261,16 @@
             this.customPanel7.Size = new System.Drawing.Size(219, 44);
             this.customPanel7.TabIndex = 21;
             // 
-            // textBox7
+            // tbFind
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(4, 15);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(223, 16);
-            this.textBox7.TabIndex = 2;
+            this.tbFind.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbFind.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFind.Location = new System.Drawing.Point(4, 15);
+            this.tbFind.Name = "tbFind";
+            this.tbFind.Size = new System.Drawing.Size(210, 16);
+            this.tbFind.TabIndex = 2;
+            this.tbFind.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.tbFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
             // 
             // label1
             // 
@@ -292,6 +332,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // customPanel2
+            // 
+            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.Controls.Add(this.offsetBox);
+            this.customPanel2.ElipseRadius = 0;
+            this.customPanel2.Location = new System.Drawing.Point(53, 406);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(62, 41);
+            this.customPanel2.TabIndex = 25;
+            // 
+            // offsetBox
+            // 
+            this.offsetBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.offsetBox.Location = new System.Drawing.Point(12, 14);
+            this.offsetBox.Name = "offsetBox";
+            this.offsetBox.Size = new System.Drawing.Size(50, 16);
+            this.offsetBox.TabIndex = 26;
+            this.offsetBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.offsetBox_KeyDown);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +372,8 @@
             this.customPanel1.PerformLayout();
             this.customPanel7.ResumeLayout(false);
             this.customPanel7.PerformLayout();
+            this.customPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.offsetBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,8 +397,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private CafeManager.Custom_Control.CustomPanel customPanel7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbFind;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbFullName;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button prevButton;
+        private CafeManager.Custom_Control.CustomPanel customPanel2;
+        private System.Windows.Forms.NumericUpDown offsetBox;
     }
 }

@@ -78,7 +78,7 @@ namespace CafeManager.Service
 
         public bool save(Category entity)
         {
-            string query = "INSERT INTO dbo.Category VALUES('" + entity.CategoryName + "')";
+            string query = "INSERT INTO dbo.Category VALUES(N'" + entity.CategoryName + "')";
             int data = DataProvider.getController().ExecuteNonQuery(query);
             return data != 0;
         }

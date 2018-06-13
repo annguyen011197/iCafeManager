@@ -57,7 +57,7 @@ namespace CafeManager.GUI
             billReportPage2.SetParameterValue("Date_Check_In",bill.Date_Check_In);
             billReportPage2.SetParameterValue("ID", bill.ID.ToString());
             billReportPage2.SetParameterValue("Date_Check_Out", bill.Date_Check_Out);
-            billReportPage2.SetParameterValue("Customer", bill.Customer.ToStringSQL());
+            billReportPage2.SetParameterValue("Customer", bill.Customer);
             billReportPage2.SetParameterValue("Discount", bill.Discount);
             billReportPage2.SetParameterValue("Table", bill.IDTable.ToString());
             crystalReportViewer1.ReportSource = billReportPage2;

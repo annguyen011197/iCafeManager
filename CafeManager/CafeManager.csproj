@@ -43,6 +43,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,47 +72,41 @@
     <Compile Include="Controller\Bill_InfoController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\DataSource.cs" />
     <Compile Include="Controller\FoodController.cs" />
     <Compile Include="Controller\BillControllery.cs" />
+    <Compile Include="Controller\StatisticsController.cs" />
     <Compile Include="Controller\VoucherController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
-    <Compile Include="GUI\Custom Control\CustomPanel.cs">
+    <Compile Include="GUI\Custom_Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\Elipse.cs" />
-    <Compile Include="GUI\Custom Control\ExitButton.cs">
+    <Compile Include="GUI\Custom_Control\Elipse.cs" />
+    <Compile Include="GUI\Custom_Control\ExitButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\ExitButton.Designer.cs">
-      <DependentUpon>ExitButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Custom Control\FormEclipse.cs">
+    <Compile Include="GUI\Custom_Control\ExitButton.Designer.cs" />
+    <Compile Include="GUI\Custom_Control\FormEclipse.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\FormEclipse.Designer.cs">
-      <DependentUpon>FormEclipse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Custom Control\Graphics.cs" />
-    <Compile Include="GUI\Custom Control\Header.cs">
+    <Compile Include="GUI\Custom_Control\FormEclipse.Designer.cs" />
+    <Compile Include="GUI\Custom_Control\Graphics.cs" />
+    <Compile Include="GUI\Custom_Control\Header.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\Header.Designer.cs">
-      <DependentUpon>Header.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Custom Control\NonFlickerSplitContainer.cs">
+    <Compile Include="GUI\Custom_Control\Header.Designer.cs" />
+    <Compile Include="GUI\Custom_Control\NonFlickerSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\SexyDateTimePicker.cs">
+    <Compile Include="GUI\Custom_Control\SexyDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\TextboxCustom.cs">
+    <Compile Include="GUI\Custom_Control\TextboxCustom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Custom Control\TextboxCustom.Designer.cs">
-      <DependentUpon>TextboxCustom.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GUI\Custom_Control\TextboxCustom.Designer.cs" />
     <Compile Include="GUI\HomeV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +155,18 @@
     <Compile Include="GUI\ManagerForm\AddNewFood.Designer.cs">
       <DependentUpon>AddNewFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManagerForm\AddVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\AddVoucher.Designer.cs">
+      <DependentUpon>AddVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\Chart.Designer.cs">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManagerForm\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +184,12 @@
     </Compile>
     <Compile Include="GUI\ManagerForm\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\EditVoucher.Designer.cs">
+      <DependentUpon>EditVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManagerForm\EditItems.cs">
       <SubType>Form</SubType>
@@ -201,6 +214,24 @@
     </Compile>
     <Compile Include="GUI\ManagerForm\Items.Designer.cs">
       <DependentUpon>Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\TableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\TableForm.Designer.cs">
+      <DependentUpon>TableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\VoucherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManagerForm\VoucherForm.Designer.cs">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManagerForm\Staff.cs">
       <SubType>Form</SubType>
@@ -229,6 +260,11 @@
     <Compile Include="Model\Voucher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Service\Account_InfoService.cs" />
     <Compile Include="Service\Account_TypeService.cs" />
     <Compile Include="Service\Bill_VoucherService.cs" />
@@ -237,6 +273,7 @@
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\FoodService.cs" />
     <Compile Include="Service\BillService.cs" />
+    <Compile Include="Service\StatisticsService.cs" />
     <Compile Include="Service\VoucherService.cs" />
     <Compile Include="Service\TableService.cs" />
     <Compile Include="Service\AccountService.cs" />
@@ -264,18 +301,10 @@
     <EmbeddedResource Include="Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Custom Control\CustomPanel.resx">
-      <DependentUpon>CustomPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Custom Control\ExitButton.resx">
-      <DependentUpon>ExitButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Custom Control\Header.resx">
-      <DependentUpon>Header.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Custom Control\TextboxCustom.resx">
-      <DependentUpon>TextboxCustom.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Custom_Control\CustomPanel.resx" />
+    <EmbeddedResource Include="GUI\Custom_Control\ExitButton.resx" />
+    <EmbeddedResource Include="GUI\Custom_Control\Header.resx" />
+    <EmbeddedResource Include="GUI\Custom_Control\TextboxCustom.resx" />
     <EmbeddedResource Include="GUI\HomeV2.resx">
       <DependentUpon>HomeV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +329,12 @@
     <EmbeddedResource Include="GUI\ManagerForm\AddNewFood.resx">
       <DependentUpon>AddNewFood.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\AddVoucher.resx">
+      <DependentUpon>AddVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\EditVoucher.resx">
+      <DependentUpon>EditVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\EditItems.resx">
       <DependentUpon>EditItems.cs</DependentUpon>
@@ -321,6 +359,15 @@
     <EmbeddedResource Include="GUI\ManagerForm\Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManagerForm\VoucherForm.resx">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,14 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UserControl\AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,7 +396,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Utils\App.config" />
+    <None Include="Utils\App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remove-symbol.png" />
@@ -403,6 +447,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-table-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image\icons8-table-50%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,5 @@ namespace CafeManager.Model
         public string Display_Name { get; set; }
         public int Type { get; set; }
         public int Info { get; set; }
-        public string Color { get; set; }
     }
 }

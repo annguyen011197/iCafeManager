@@ -32,6 +32,7 @@ namespace CafeManager
             listColor.Add(Color.FromArgb(231, 76, 60));
             listColor.Add(Color.FromArgb(230, 126, 34));
             Checked = false;
+            unCheck();
         }
 
         private ToolTip createToolTip()
@@ -55,19 +56,18 @@ namespace CafeManager
                 String[] Names = account.Display_Name.Split(' ');
                 String name = Names[Names.Length - 1];
                 label1.Text = name.ToString();
-                BackColor = listColor[new Random().Next(listColor.Count - 1)];
-
+                
                 createToolTip().SetToolTip(this.label1, account.Display_Name);
             }
         }
 
         public void check(){
-            BackColor = "#bdc3c7".ToColor();
+            BackColor = "#2980b9".ToColor();
             Checked = true;
         }
         public void unCheck()
         {
-            BackColor = account.Color.ToColor();
+            BackColor = "#3498db".ToColor();
             Checked = false;
         }
 

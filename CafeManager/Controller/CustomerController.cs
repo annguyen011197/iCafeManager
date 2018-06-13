@@ -26,6 +26,11 @@ namespace CafeManager.Controller
             //throw new NotImplementedException();
         }
 
+        public DataTable FindByName(String name)
+        {
+            return accountService.findByName(name);
+        }
+
         public CustomerController()
         {
             accountService = new CustomerService();
@@ -52,6 +57,17 @@ namespace CafeManager.Controller
         public void Delete(Customer customer)
         {
             accountService.delete(customer);
+        }
+
+        public bool checkExist(string IDNumber)
+        {
+            if (IDNumber == "") return false;
+            return accountService.exists(IDNumber);
+        }
+
+        public DataTable findWithOffset(int offset, int limit)
+        {
+            return accountService.queryOffset(offset, limit);
         }
     }
 }

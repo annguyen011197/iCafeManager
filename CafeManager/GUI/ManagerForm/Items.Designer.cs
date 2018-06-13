@@ -30,13 +30,13 @@
         {
             this.nonFlickerSplitContainer1 = new CafeManager.NonFlickerSplitContainer();
             this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nonFlickerSplitContainer1)).BeginInit();
             this.nonFlickerSplitContainer1.Panel1.SuspendLayout();
             this.nonFlickerSplitContainer1.Panel2.SuspendLayout();
@@ -79,6 +79,16 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.Size = new System.Drawing.Size(369, 444);
             this.dgvItems.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(-1, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 26);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "Loại";
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keydown);
             // 
             // lbType
             // 
@@ -170,15 +180,6 @@
             this.button1.Text = "Thêm món";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(-1, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 26);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keydown);
             // 
             // Items
             // 

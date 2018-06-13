@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CafeManager.Utils;
+using System.Data;
+
 namespace CafeManager.Controller
 {
     class TableController
@@ -29,9 +31,24 @@ namespace CafeManager.Controller
             return tableService.findAll().DataTableToList<Table>();
         }
 
+        public bool createTable(Table table)
+        {
+            return tableService.save(table);
+        }
+
         public void saveTable(Table table)
         {
             tableService.update(table);
+        }
+
+        public DataTable findAll()
+        {
+            return tableService.findAll();
+        }
+
+        public void Delete(int ID)
+        {
+            tableService.delete(ID);
         }
     }
 }

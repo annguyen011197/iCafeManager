@@ -104,6 +104,7 @@
             this.textBox2.Size = new System.Drawing.Size(203, 16);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Password";
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // customPanel1
             // 
@@ -125,6 +126,7 @@
             this.textBox1.Size = new System.Drawing.Size(203, 18);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Username";
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // header1
             // 
@@ -158,6 +160,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();

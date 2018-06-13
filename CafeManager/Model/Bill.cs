@@ -13,6 +13,6 @@ namespace CafeManager.Model
         public DateTime Date_Check_Out { get; set; }
         public int IDTable { get; set; }
         public int Discount { get; set; }
-        public int Customer { get; set; }
+        public String Customer { get; set; }
     }
 }

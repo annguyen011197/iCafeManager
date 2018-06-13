@@ -21,18 +21,23 @@ namespace CafeManager.GUI.ManagerForm
             dgvCus.RowHeadersVisible = false;
             dgvCus.AllowUserToAddRows = false;
             UpdateData();
-
         }
-        
+
         public void UpdateData()
         {
-            dgvCus.DataSource = CustomerController.getController().FindAll();
-            dgvCus.Columns["CustomerName"].HeaderText = "Tên khách hàng";
-            dgvCus.Columns["CustomerName"].Width = 200;
-            dgvCus.Columns["Phone"].HeaderText = "Số điện thoại";
-            dgvCus.Columns["CustomerAddress"].Visible = false;
-            dgvCus.Columns["Note"].Visible = false;
-            dgvCus.Columns["IDNumber"].HeaderText = "CMND";
+            int offset = Decimal.ToInt32(offsetBox.Value);
+            int limit = 10;
+            dgvCus.DataSource = CustomerController.getController().findWithOffset(offset * limit, limit);
+            if (dgvCus.RowCount > 0)
+            {
+                dgvCus.Columns["CustomerName"].HeaderText = "Tên khách hàng";
+                dgvCus.Columns["CustomerName"].Width = 200;
+                dgvCus.Columns["Phone"].HeaderText = "Số điện thoại";
+                dgvCus.Columns["CustomerAddress"].Visible = false;
+                dgvCus.Columns["Note"].Visible = false;
+                dgvCus.Columns["IDNumber"].HeaderText = "CMND";
+            }
+
         }
 
         public static CustomerForm Instance
@@ -95,6 +100,55 @@ namespace CafeManager.GUI.ManagerForm
             customer.IDNumber = row.Cells["IDNumber"].Value.ToString();
             new EditCustomer(customer).ShowDialog();
             UpdateData();
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            offsetBox.UpButton();
+            UpdateData();
+        }
+
+        private void offsetBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                UpdateData();
+            }
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            offsetBox.DownButton();
+            UpdateData();
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                string text = tbFind.Text;
+                text = text.Trim();
+                if (text != "")
+                {
+                    dgvCus.DataSource = CustomerController.getController().FindByName(text);
+                    //if (dgvCus.RowCount > 0)
+                    //{
+                    //    dgvCus.Columns["CustomerName"].HeaderText = "Tên khách hàng";
+                    //    dgvCus.Columns["CustomerName"].Width = 200;
+                    //    dgvCus.Columns["Phone"].HeaderText = "Số điện thoại";
+                    //    dgvCus.Columns["CustomerAddress"].Visible = false;
+                    //    dgvCus.Columns["Note"].Visible = false;
+                    //    dgvCus.Columns["IDNumber"].HeaderText = "CMND";
+                    //}
+
+                }
+                //UpdateData();
+            }
         }
     }
 }
